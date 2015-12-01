@@ -35,6 +35,11 @@ class ViewController: NSViewController, MatlabEventDelegate {
     func matlabDidOutput(output: String) {
         print(output)
     }
+    
+    func matlabDidEncounterError(error: String) {
+        print("Error!")
+        print(error)
+    }
 
 }
 

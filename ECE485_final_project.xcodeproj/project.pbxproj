@@ -14,6 +14,7 @@
 		72A9F3121C0D2563008E7BCF /* ECE485_final_projectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9F3111C0D2563008E7BCF /* ECE485_final_projectTests.swift */; };
 		72A9F31D1C0D2563008E7BCF /* ECE485_final_projectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9F31C1C0D2563008E7BCF /* ECE485_final_projectUITests.swift */; };
 		72A9F32E1C0D279B008E7BCF /* MBDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9F32D1C0D279B008E7BCF /* MBDataModel.swift */; };
+		72A9F3331C0D4593008E7BCF /* Matlab Functions in Resources */ = {isa = PBXBuildFile; fileRef = 72A9F3321C0D4593008E7BCF /* Matlab Functions */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		72A9F31C1C0D2563008E7BCF /* ECE485_final_projectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECE485_final_projectUITests.swift; sourceTree = "<group>"; };
 		72A9F31E1C0D2563008E7BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72A9F32D1C0D279B008E7BCF /* MBDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBDataModel.swift; sourceTree = "<group>"; };
+		72A9F3321C0D4593008E7BCF /* Matlab Functions */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Matlab Functions"; path = "ECE485_final_project/Matlab Functions"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		72A9F2FE1C0D2563008E7BCF /* ECE485_final_project */ = {
 			isa = PBXGroup;
 			children = (
+				72A9F3321C0D4593008E7BCF /* Matlab Functions */,
 				72A9F32A1C0D2613008E7BCF /* Model */,
 				72A9F2FF1C0D2563008E7BCF /* AppDelegate.swift */,
 				72A9F3011C0D2563008E7BCF /* ViewController.swift */,
@@ -238,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72A9F3331C0D4593008E7BCF /* Matlab Functions in Resources */,
 				72A9F3041C0D2563008E7BCF /* Assets.xcassets in Resources */,
 				72A9F3071C0D2563008E7BCF /* Main.storyboard in Resources */,
 			);

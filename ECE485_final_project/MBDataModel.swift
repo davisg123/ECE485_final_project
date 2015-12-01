@@ -11,6 +11,7 @@ import Foundation
 protocol MatlabEventDelegate{
     func matlabDidLoad()
     func matlabDidOutput(output:String)
+    func matlabDidEncounterError(error:String)
 }
 
 class MBDataModel : NSObject {
@@ -20,6 +21,7 @@ class MBDataModel : NSObject {
     let MATLAB_PATH = "/Applications/MATLAB_R2015b.app/bin/matlab";
     let MATLAB_PARAMS = "-nodesktop";
     let READY_PROMPT = ">> "
+    let MATLAB_FUNCTION_FOLDER = "Matlab Functions"
     
     var ready = false;
     var capturedOutput: [String] = []
@@ -31,6 +33,8 @@ class MBDataModel : NSObject {
     let inputPipe = NSPipe()
     var taskOutput: NSFileHandle?
     var outputPipe = NSPipe()
+    var errorOutput: NSFileHandle?
+    var errorPipe = NSPipe()
     
     override init(){
         super.init()
@@ -39,15 +43,20 @@ class MBDataModel : NSObject {
         task.standardInput = inputPipe
         taskInput = inputPipe.fileHandleForWriting
         task.standardOutput = outputPipe
+        task.standardError = errorPipe
         taskOutput = outputPipe.fileHandleForReading
+        errorOutput = errorPipe.fileHandleForReading
         beginListeningForOutput()
         task.launch()
     }
     
-    func issueCommand(command:String){
-        taskInput?.writeData(command.dataUsingEncoding(NSASCIIStringEncoding)!)
-    }
+    //MARK: Output processing
     
+    /**
+     Read the data currently available from the output pipe
+     
+     - returns: Available output
+    */
     func readOutput() -> String?{
         let outputData = taskOutput!.availableData
         let outputString = String(data: outputData, encoding: NSASCIIStringEncoding)
@@ -71,21 +80,54 @@ class MBDataModel : NSObject {
     
     func matlabDidLoad() {
         ready = true
+        setMatlabDirectory()
         matlabDelegate?.matlabDidLoad()
     }
     
+    //MARK: command interface
+    
+    /**
+    Send a command to matlab for processing
+    
+    - parameter command: Command to process
+    */
+    func issueCommand(command:String){
+        
+        taskInput?.writeData(command.dataUsingEncoding(NSASCIIStringEncoding)!)
+    }
+    
+    //MARK: directory operations
+    
+    func setMatlabDirectory(){
+        let path = NSBundle.mainBundle().pathForResource("Matlab Functions", ofType: nil)
+        issueCommand(String(format: "cd('%@')\n", arguments: [path!]))
+    }
+    
     //MARK: listeners
+    
+    /**
+    Begins listening to the file handler for new data
+    */
     func beginListeningForOutput(){
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "outputReceived:", name: NSFileHandleDataAvailableNotification, object: taskOutput)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "errorReceived:", name: NSFileHandleDataAvailableNotification, object: errorOutput)
         registerListener()
     }
     
     func registerListener(){
         taskOutput?.waitForDataInBackgroundAndNotify()
+        errorOutput?.waitForDataInBackgroundAndNotify()
     }
     
     func outputReceived(notification:NSNotification){
         readOutput()
+        registerListener()
+    }
+    
+    func errorReceived(notification:NSNotification){
+        let outputData = errorOutput!.availableData
+        let outputString = String(data: outputData, encoding: NSASCIIStringEncoding)
+        matlabDelegate?.matlabDidEncounterError(outputString!)
         registerListener()
     }
 }
