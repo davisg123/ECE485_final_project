@@ -8,11 +8,17 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, MatlabEventDelegate {
+    
+    let dataModel = MBDataModel.sharedInstance
+    
+    @IBOutlet weak var matlabInitView: NSView?
+    @IBOutlet weak var matlabInitProgressIndicator: NSProgressIndicator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        dataModel.matlabDelegate = self;
+        matlabInitProgressIndicator?.startAnimation(self)
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +27,14 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-
+    
+    func matlabDidLoad() {
+        matlabInitView?.hidden = true
+    }
+    
+    func matlabDidOutput(output: String) {
+        print(output)
+    }
 
 }
 
