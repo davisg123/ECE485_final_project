@@ -99,7 +99,7 @@ class MBDataModel : NSObject {
     //MARK: directory operations
     
     func setMatlabDirectory(){
-        let path = NSBundle.mainBundle().pathForResource("Matlab Functions", ofType: nil)
+        let path = NSBundle.mainBundle().pathForResource(MATLAB_FUNCTION_FOLDER, ofType: nil)
         issueCommand(String(format: "cd('%@')\n", arguments: [path!]))
     }
     
