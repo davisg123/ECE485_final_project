@@ -8,13 +8,15 @@
 
 import Cocoa
 
-class MBCentralViewController: NSViewController, MatlabEventDelegate {
+class MBCentralViewController: NSViewController, MatlabEventDelegate, NSSplitViewDelegate {
     
     let dataModel = MBDataModel.sharedInstance
+    @IBOutlet var splitTrackView : NSSplitView?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataModel.matlabEventDelegate = self;
+        dataModel.matlabEventDelegate = self
         // Do view setup here.
     }
     
@@ -26,6 +28,9 @@ class MBCentralViewController: NSViewController, MatlabEventDelegate {
         print("Error!")
         print(error)
     }
-
+    
+    func splitView(splitView: NSSplitView, shouldAdjustSizeOfSubview view: NSView) -> Bool {
+        return true
+    }
     
 }
