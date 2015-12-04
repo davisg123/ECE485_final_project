@@ -8,14 +8,18 @@
 
 import Foundation
 
-protocol MatlabEventDelegate{
+protocol MatlabLoadDelegate{
     func matlabDidLoad()
+}
+
+protocol MatlabEventDelegate{
     func matlabDidOutput(output:String)
     func matlabDidEncounterError(error:String)
 }
 
 class MBDataModel : NSObject {
-    var matlabDelegate:MatlabEventDelegate?
+    var matlabEventDelegate:MatlabEventDelegate?
+    var matlabLoadDelegate:MatlabLoadDelegate?
     
     //TODO: search for matlab installation instead of static location
     let MATLAB_PATH = "/Applications/MATLAB_R2015b.app/bin/matlab";
@@ -74,14 +78,14 @@ class MBDataModel : NSObject {
     }
     
     func captureOutput(output:String) {
-        matlabDelegate?.matlabDidOutput(output)
+        matlabEventDelegate?.matlabDidOutput(output)
         capturedOutput.append(output)
     }
     
     func matlabDidLoad() {
         ready = true
         setMatlabDirectory()
-        matlabDelegate?.matlabDidLoad()
+        matlabLoadDelegate?.matlabDidLoad()
     }
     
     //MARK: command interface
@@ -127,7 +131,7 @@ class MBDataModel : NSObject {
     func errorReceived(notification:NSNotification){
         let outputData = errorOutput!.availableData
         let outputString = String(data: outputData, encoding: NSASCIIStringEncoding)
-        matlabDelegate?.matlabDidEncounterError(outputString!)
+        matlabEventDelegate?.matlabDidEncounterError(outputString!)
         registerListener()
     }
 }

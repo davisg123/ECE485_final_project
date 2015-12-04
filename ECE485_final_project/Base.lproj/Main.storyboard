@@ -645,7 +645,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ECE485_final_project" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="88" y="-213"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -654,36 +654,38 @@
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="800" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="800" height="600"/>
+                        <value key="maxSize" type="size" width="800" height="600"/>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="r9S-m0-Lva" kind="relationship" relationship="window.shadowedContentViewController" id="gje-et-cOj"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="75" y="184"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <scene sceneID="WKe-ug-sBQ">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="ECE485_final_project" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <viewController id="r9S-m0-Lva" customClass="ViewController" customModule="ECE485_final_project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="p4M-BG-YSM">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iTP-KF-ugV">
-                                <rect key="frame" x="91" y="66" width="299" height="157"/>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VdB-un-zz4">
+                                <rect key="frame" x="251" y="222" width="299" height="157"/>
                                 <subviews>
-                                    <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="zLu-jy-Bfz">
-                                        <rect key="frame" x="31" y="30" width="236" height="22"/>
+                                    <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="s4q-mQ-sZN">
+                                        <rect key="frame" x="31" y="30" width="236" height="20"/>
                                         <animations/>
                                     </progressIndicator>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kur-PX-lg6">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B2F-Od-HZc">
                                         <rect key="frame" x="89" y="88" width="120" height="17"/>
                                         <animations/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Initializing MATLAB" id="4EZ-Rb-pjx">
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Initializing MATLAB" id="pXH-2s-rkk">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -696,13 +698,148 @@
                         <animations/>
                     </view>
                     <connections>
-                        <outlet property="matlabInitProgressIndicator" destination="zLu-jy-Bfz" id="yfq-JL-F24"/>
-                        <outlet property="matlabInitView" destination="iTP-KF-ugV" id="auq-nS-cyK"/>
+                        <segue destination="iKd-t9-XjI" kind="sheet" identifier="toMain" id="g8A-Hh-KCj"/>
                     </connections>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="hHC-R4-dYa" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="973"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Tyk-Ce-WNp">
+            <objects>
+                <viewController id="iKd-t9-XjI" sceneMemberID="viewController">
+                    <view key="view" id="mrP-j4-kma">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3jd-jj-jkb">
+                                <rect key="frame" x="65" y="552" width="13" height="21"/>
+                                <animations/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XAK-02-fhc">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="Fjy-Vq-9C8" kind="popover" identifier="toNoteSelector" popoverAnchorView="3jd-jj-jkb" popoverBehavior="t" preferredEdge="maxY" id="HQV-XN-faM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                    </view>
+                </viewController>
+                <customObject id="63k-Hu-yYx" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125" y="1784"/>
+        </scene>
+        <!--Delegate-->
+        <scene sceneID="lg3-SE-1Rp">
+            <objects>
+                <viewController id="Fjy-Vq-9C8" customClass="MBNoteSelectorViewController" customModule="ECE485_final_project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Zch-s5-sfz">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zkb-Zg-4Zu">
+                                <rect key="frame" x="207" y="257" width="17" height="17"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Hi" id="ATJ-bw-KPI">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jvM-ea-9WO" customClass="MBColorableView" customModule="ECE485_final_project" customModuleProvider="target">
+                                <rect key="frame" x="125" y="77" width="193" height="144"/>
+                                <subviews>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s84-gZ-Cv0" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="4" width="25" height="146"/>
+                                        <animations/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="A"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="Fjy-Vq-9C8" id="rTm-wW-gQ3"/>
+                                        </connections>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fRr-tE-DRR" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
+                                        <rect key="frame" x="28" y="4" width="25" height="146"/>
+                                        <animations/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="B"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="Fjy-Vq-9C8" id="bX3-lA-CG5"/>
+                                        </connections>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="90D-bV-LQc" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
+                                        <rect key="frame" x="56" y="4" width="25" height="146"/>
+                                        <animations/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="C"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="Fjy-Vq-9C8" id="xSx-YM-EEr"/>
+                                        </connections>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TZ5-wt-0uf" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
+                                        <rect key="frame" x="84" y="4" width="25" height="146"/>
+                                        <animations/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="D"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="Fjy-Vq-9C8" id="ccn-he-dkC"/>
+                                        </connections>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Trp-Gy-2N3" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
+                                        <rect key="frame" x="112" y="4" width="25" height="146"/>
+                                        <animations/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="E"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="Fjy-Vq-9C8" id="Oow-Fu-9Ua"/>
+                                        </connections>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ate-gt-7Tu" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
+                                        <rect key="frame" x="140" y="4" width="25" height="146"/>
+                                        <animations/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="F"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="Fjy-Vq-9C8" id="PM8-Dt-eJH"/>
+                                        </connections>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w2H-M7-TA5" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
+                                        <rect key="frame" x="168" y="4" width="25" height="146"/>
+                                        <animations/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="G"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="Fjy-Vq-9C8" id="Qee-1f-cDM"/>
+                                        </connections>
+                                    </customView>
+                                </subviews>
+                                <animations/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
+                        </subviews>
+                        <animations/>
+                    </view>
+                </viewController>
+                <customObject id="DSS-m9-smN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="907" y="1784"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSAddTemplate" width="11" height="11"/>
+    </resources>
 </document>

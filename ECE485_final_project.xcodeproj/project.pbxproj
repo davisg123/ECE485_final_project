@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72A9851B1C11235B00937E81 /* MBCentralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9851A1C11235B00937E81 /* MBCentralViewController.swift */; };
+		72A9851E1C1125E900937E81 /* MBNoteSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9851D1C1125E900937E81 /* MBNoteSelectorViewController.swift */; };
+		72A985251C1126F100937E81 /* MBPianoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A985241C1126F100937E81 /* MBPianoKey.swift */; };
+		72A985291C1127E600937E81 /* MBColorableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A985281C1127E600937E81 /* MBColorableView.swift */; };
 		72A9F3001C0D2563008E7BCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9F2FF1C0D2563008E7BCF /* AppDelegate.swift */; };
 		72A9F3021C0D2563008E7BCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9F3011C0D2563008E7BCF /* ViewController.swift */; };
 		72A9F3041C0D2563008E7BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72A9F3031C0D2563008E7BCF /* Assets.xcassets */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		72A9851A1C11235B00937E81 /* MBCentralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBCentralViewController.swift; sourceTree = "<group>"; };
+		72A9851D1C1125E900937E81 /* MBNoteSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBNoteSelectorViewController.swift; sourceTree = "<group>"; };
+		72A985241C1126F100937E81 /* MBPianoKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBPianoKey.swift; sourceTree = "<group>"; };
+		72A985281C1127E600937E81 /* MBColorableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBColorableView.swift; sourceTree = "<group>"; };
 		72A9F2FC1C0D2563008E7BCF /* ECE485_final_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECE485_final_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A9F2FF1C0D2563008E7BCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72A9F3011C0D2563008E7BCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +84,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72A9851C1C1125AC00937E81 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				72A9F3011C0D2563008E7BCF /* ViewController.swift */,
+				72A9851A1C11235B00937E81 /* MBCentralViewController.swift */,
+				72A9851D1C1125E900937E81 /* MBNoteSelectorViewController.swift */,
+			);
+			name = VCs;
+			sourceTree = "<group>";
+		};
+		72A9851F1C11264300937E81 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				72A985241C1126F100937E81 /* MBPianoKey.swift */,
+				72A985281C1127E600937E81 /* MBColorableView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		72A9F2F31C0D2563008E7BCF = {
 			isa = PBXGroup;
 			children = (
@@ -99,10 +126,11 @@
 		72A9F2FE1C0D2563008E7BCF /* ECE485_final_project */ = {
 			isa = PBXGroup;
 			children = (
+				72A9851F1C11264300937E81 /* Views */,
+				72A9851C1C1125AC00937E81 /* VCs */,
 				72A9F3321C0D4593008E7BCF /* Matlab Functions */,
 				72A9F32A1C0D2613008E7BCF /* Model */,
 				72A9F2FF1C0D2563008E7BCF /* AppDelegate.swift */,
-				72A9F3011C0D2563008E7BCF /* ViewController.swift */,
 				72A9F3031C0D2563008E7BCF /* Assets.xcassets */,
 				72A9F3051C0D2563008E7BCF /* Main.storyboard */,
 				72A9F3081C0D2563008E7BCF /* Info.plist */,
@@ -271,6 +299,10 @@
 				72A9F3021C0D2563008E7BCF /* ViewController.swift in Sources */,
 				72A9F3001C0D2563008E7BCF /* AppDelegate.swift in Sources */,
 				72A9F32E1C0D279B008E7BCF /* MBDataModel.swift in Sources */,
+				72A9851E1C1125E900937E81 /* MBNoteSelectorViewController.swift in Sources */,
+				72A985251C1126F100937E81 /* MBPianoKey.swift in Sources */,
+				72A985291C1127E600937E81 /* MBColorableView.swift in Sources */,
+				72A9851B1C11235B00937E81 /* MBCentralViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +524,7 @@
 				72A9F3231C0D2563008E7BCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		72A9F3241C0D2563008E7BCF /* Build configuration list for PBXNativeTarget "ECE485_final_projectTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +533,7 @@
 				72A9F3261C0D2563008E7BCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		72A9F3271C0D2563008E7BCF /* Build configuration list for PBXNativeTarget "ECE485_final_projectUITests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +542,7 @@
 				72A9F3291C0D2563008E7BCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
