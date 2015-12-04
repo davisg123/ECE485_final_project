@@ -724,6 +724,130 @@
                                     <segue destination="Fjy-Vq-9C8" kind="popover" identifier="toNoteSelector" popoverAnchorView="3jd-jj-jkb" popoverBehavior="t" preferredEdge="maxY" id="HQV-XN-faM"/>
                                 </connections>
                             </button>
+                            <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="BoS-0h-0OS">
+                                <rect key="frame" x="84" y="323" width="473" height="148"/>
+                                <subviews>
+                                    <customView fixedFrame="YES" id="rwH-VN-Gav">
+                                        <rect key="frame" x="0.0" y="0.0" width="473" height="75.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HRv-dI-j12">
+                                                <rect key="frame" x="0.0" y="3.5" width="414" height="71.5"/>
+                                                <subviews>
+                                                    <customView fixedFrame="YES" id="bod-aK-Ncf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="69" height="71.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <animations/>
+                                                    </customView>
+                                                    <customView fixedFrame="YES" id="eEl-Az-Vlc">
+                                                        <rect key="frame" x="70" y="0.0" width="68" height="71.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <animations/>
+                                                    </customView>
+                                                    <customView fixedFrame="YES" id="ukk-kc-tsy">
+                                                        <rect key="frame" x="139" y="0.0" width="68" height="71.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <animations/>
+                                                    </customView>
+                                                    <customView fixedFrame="YES" id="ltn-2h-a3X">
+                                                        <rect key="frame" x="208" y="0.0" width="68" height="71.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <animations/>
+                                                    </customView>
+                                                    <customView fixedFrame="YES" id="S5K-eu-5dP">
+                                                        <rect key="frame" x="277" y="0.0" width="68" height="71.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <animations/>
+                                                    </customView>
+                                                    <customView fixedFrame="YES" id="bvi-Og-nyx">
+                                                        <rect key="frame" x="346" y="0.0" width="68" height="71.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <animations/>
+                                                    </customView>
+                                                </subviews>
+                                                <animations/>
+                                                <holdingPriorities>
+                                                    <real value="250"/>
+                                                    <real value="250"/>
+                                                    <real value="250"/>
+                                                    <real value="250"/>
+                                                    <real value="250"/>
+                                                    <real value="250"/>
+                                                </holdingPriorities>
+                                            </splitView>
+                                        </subviews>
+                                        <animations/>
+                                    </customView>
+                                    <customView fixedFrame="YES" id="sHU-hh-iuu">
+                                        <rect key="frame" x="0.0" y="76.5" width="473" height="71.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ylQ-wN-1Yb">
+                                                <rect key="frame" x="0.0" y="1" width="473" height="70.5"/>
+                                                <subviews>
+                                                    <customView fixedFrame="YES" id="yGh-rx-Go2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="76.5" height="70.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <animations/>
+                                                    </customView>
+                                                    <customView fixedFrame="YES" id="STE-63-VAS">
+                                                        <rect key="frame" x="77.5" y="0.0" width="64" height="70.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <animations/>
+                                                    </customView>
+                                                    <customView fixedFrame="YES" id="PYi-oq-OkJ">
+                                                        <rect key="frame" x="142.5" y="0.0" width="87" height="70.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <animations/>
+                                                    </customView>
+                                                    <customView fixedFrame="YES" id="tNn-Xr-3KP">
+                                                        <rect key="frame" x="230.5" y="0.0" width="119" height="70.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <animations/>
+                                                    </customView>
+                                                    <customView fixedFrame="YES" id="KtN-kI-Xr8">
+                                                        <rect key="frame" x="350.5" y="0.0" width="122.5" height="70.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <animations/>
+                                                    </customView>
+                                                </subviews>
+                                                <animations/>
+                                                <holdingPriorities>
+                                                    <real value="250"/>
+                                                    <real value="250"/>
+                                                    <real value="250"/>
+                                                    <real value="250"/>
+                                                    <real value="250"/>
+                                                </holdingPriorities>
+                                            </splitView>
+                                        </subviews>
+                                        <animations/>
+                                    </customView>
+                                </subviews>
+                                <animations/>
+                                <holdingPriorities>
+                                    <real value="250"/>
+                                    <real value="250"/>
+                                </holdingPriorities>
+                            </splitView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h6L-Jd-rIe">
+                                <rect key="frame" x="18" y="425" width="48" height="17"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Track 1" id="BUY-2F-7Tp">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="72J-UJ-AEJ">
+                                <rect key="frame" x="18" y="350" width="49" height="17"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Track 2" id="8Ex-Ff-l92">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <animations/>
                     </view>
@@ -750,10 +874,10 @@
                                 </textFieldCell>
                             </textField>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jvM-ea-9WO" customClass="MBColorableView" customModule="ECE485_final_project" customModuleProvider="target">
-                                <rect key="frame" x="125" y="77" width="193" height="144"/>
+                                <rect key="frame" x="116" y="78" width="199" height="144"/>
                                 <subviews>
                                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s84-gZ-Cv0" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="4" width="25" height="146"/>
+                                        <rect key="frame" x="3" y="4" width="25" height="146"/>
                                         <animations/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="note" value="A"/>
@@ -763,7 +887,7 @@
                                         </connections>
                                     </customView>
                                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fRr-tE-DRR" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
-                                        <rect key="frame" x="28" y="4" width="25" height="146"/>
+                                        <rect key="frame" x="31" y="4" width="25" height="146"/>
                                         <animations/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="note" value="B"/>
@@ -773,7 +897,7 @@
                                         </connections>
                                     </customView>
                                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="90D-bV-LQc" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
-                                        <rect key="frame" x="56" y="4" width="25" height="146"/>
+                                        <rect key="frame" x="59" y="4" width="25" height="146"/>
                                         <animations/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="note" value="C"/>
@@ -783,7 +907,7 @@
                                         </connections>
                                     </customView>
                                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TZ5-wt-0uf" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
-                                        <rect key="frame" x="84" y="4" width="25" height="146"/>
+                                        <rect key="frame" x="87" y="4" width="25" height="146"/>
                                         <animations/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="note" value="D"/>
@@ -793,7 +917,7 @@
                                         </connections>
                                     </customView>
                                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Trp-Gy-2N3" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
-                                        <rect key="frame" x="112" y="4" width="25" height="146"/>
+                                        <rect key="frame" x="115" y="4" width="25" height="146"/>
                                         <animations/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="note" value="E"/>
@@ -803,7 +927,7 @@
                                         </connections>
                                     </customView>
                                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ate-gt-7Tu" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
-                                        <rect key="frame" x="140" y="4" width="25" height="146"/>
+                                        <rect key="frame" x="143" y="4" width="25" height="146"/>
                                         <animations/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="note" value="F"/>
@@ -813,7 +937,7 @@
                                         </connections>
                                     </customView>
                                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w2H-M7-TA5" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
-                                        <rect key="frame" x="168" y="4" width="25" height="146"/>
+                                        <rect key="frame" x="171" y="4" width="25" height="146"/>
                                         <animations/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="note" value="G"/>
