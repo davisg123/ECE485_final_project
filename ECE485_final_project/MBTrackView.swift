@@ -8,9 +8,10 @@
 
 import Cocoa
 
-class MBTrackView: NSView {
+class MBTrackView: NSView, NSSplitViewDelegate {
     
     @IBOutlet var view : NSView?
+    @IBOutlet var splitView : NSSplitView?
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -22,6 +23,9 @@ class MBTrackView: NSView {
         NSBundle.mainBundle().loadNibNamed("MBTrackView", owner: self, topLevelObjects: nil)
         
         setContentFrame()
+        
+        self.wantsLayer = true
+        self.layer?.cornerRadius = 5.0
         
         self.addSubview(self.view!)
     }
@@ -40,6 +44,15 @@ class MBTrackView: NSView {
         super.drawRect(dirtyRect)
 
         // Drawing code here.
+    }
+    
+    func splitView(splitView: NSSplitView, shouldAdjustSizeOfSubview view: NSView) -> Bool {
+        return true;
+    }
+    
+    func splitView(splitView: NSSplitView, shouldHideDividerAtIndex dividerIndex: Int) -> Bool {
+        //hide the divider of the track header view
+        return dividerIndex == 0
     }
     
 }

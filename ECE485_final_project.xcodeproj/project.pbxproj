@@ -21,6 +21,7 @@
 		72A9F31D1C0D2563008E7BCF /* ECE485_final_projectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9F31C1C0D2563008E7BCF /* ECE485_final_projectUITests.swift */; };
 		72A9F32E1C0D279B008E7BCF /* MBDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9F32D1C0D279B008E7BCF /* MBDataModel.swift */; };
 		72A9F3331C0D4593008E7BCF /* Matlab Functions in Resources */ = {isa = PBXBuildFile; fileRef = 72A9F3321C0D4593008E7BCF /* Matlab Functions */; };
+		72F69E6C1C137C69002BA041 /* MBTrackHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F69E6B1C137C69002BA041 /* MBTrackHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		72A9F31E1C0D2563008E7BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72A9F32D1C0D279B008E7BCF /* MBDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBDataModel.swift; sourceTree = "<group>"; };
 		72A9F3321C0D4593008E7BCF /* Matlab Functions */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Matlab Functions"; path = "ECE485_final_project/Matlab Functions"; sourceTree = SOURCE_ROOT; };
+		72F69E6B1C137C69002BA041 /* MBTrackHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MBTrackHeaderView.swift; path = ../MBTrackHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		72A9851F1C11264300937E81 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				72F69E6B1C137C69002BA041 /* MBTrackHeaderView.swift */,
 				72A985241C1126F100937E81 /* MBPianoKey.swift */,
 				72A985281C1127E600937E81 /* MBColorableView.swift */,
 				7267B95A1C121C540029E125 /* MBTrackView.swift */,
@@ -303,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72F69E6C1C137C69002BA041 /* MBTrackHeaderView.swift in Sources */,
 				72A9F3021C0D2563008E7BCF /* ViewController.swift in Sources */,
 				72A9F3001C0D2563008E7BCF /* AppDelegate.swift in Sources */,
 				72A9F32E1C0D279B008E7BCF /* MBDataModel.swift in Sources */,
