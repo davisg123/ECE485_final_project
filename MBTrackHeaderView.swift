@@ -9,20 +9,15 @@
 import Cocoa
 
 class MBTrackHeaderView: MBColorableView {
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
 
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
-        forceFrameSize(NSMakeSize(70, self.frame.height))
+        setFrameSize(NSMakeSize(70, self.frame.height))
         // Drawing code here.
-    }
-    
-    override func setFrameSize(newSize: NSSize) {
-        //constant frame width
-        super.setFrameSize(NSMakeSize(70, newSize.height))
-    }
-    
-    func forceFrameSize(newSize: NSSize) {
-        super.setFrameSize(newSize)
     }
     
 }

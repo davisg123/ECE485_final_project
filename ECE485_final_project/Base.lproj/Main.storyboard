@@ -715,45 +715,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3jd-jj-jkb">
-                                <rect key="frame" x="65" y="552" width="13" height="21"/>
-                                <animations/>
-                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XAK-02-fhc">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="Fjy-Vq-9C8" kind="popover" identifier="toNoteSelector" popoverAnchorView="3jd-jj-jkb" popoverBehavior="t" preferredEdge="maxY" id="HQV-XN-faM"/>
-                                </connections>
-                            </button>
-                            <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-VN-d0a">
-                                <rect key="frame" x="58" y="291" width="700" height="142"/>
+                            <splitView arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-VN-d0a">
+                                <rect key="frame" x="50" y="387" width="700" height="100"/>
                                 <subviews>
                                     <customView fixedFrame="YES" id="baz-Iv-VpC" customClass="MBTrackView" customModule="ECE485_final_project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="700" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <animations/>
                                     </customView>
-                                    <customView fixedFrame="YES" id="0ch-nz-9MV" customClass="MBTrackView" customModule="ECE485_final_project" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="101" width="700" height="41"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <animations/>
-                                    </customView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="wi8-z1-QuV"/>
+                                </constraints>
                                 <animations/>
                                 <holdingPriorities>
                                     <real value="250"/>
-                                    <real value="250"/>
                                 </holdingPriorities>
                                 <connections>
-                                    <outlet property="delegate" destination="iKd-t9-XjI" id="GZe-eN-LVR"/>
+                                    <outlet property="delegate" destination="iKd-t9-XjI" id="NKE-Vc-adj"/>
                                 </connections>
                             </splitView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="ZXJ-QG-GWg">
+                                <rect key="frame" x="50" y="350" width="700" height="35"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gy6-Vu-b8E">
+                                        <rect key="frame" x="682" y="7" width="13" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="13" id="WAW-ia-Idw"/>
+                                        </constraints>
+                                        <animations/>
+                                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WKz-CQ-KvA">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="addNewTrack:" target="iKd-t9-XjI" id="Qgp-Ht-fxw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="AJ3-TN-0dR"/>
+                                    <constraint firstItem="gy6-Vu-b8E" firstAttribute="top" secondItem="ZXJ-QG-GWg" secondAttribute="top" constant="8" id="dog-k8-qlP"/>
+                                    <constraint firstAttribute="trailing" secondItem="gy6-Vu-b8E" secondAttribute="trailing" constant="5" id="pr6-cP-yaa"/>
+                                    <constraint firstAttribute="bottom" secondItem="gy6-Vu-b8E" secondAttribute="bottom" constant="8" id="q2V-cl-qHb"/>
+                                </constraints>
+                                <animations/>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="hAu-9X-JUf">
+                                <rect key="frame" x="50" y="545" width="700" height="35"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4lu-bs-tNJ">
+                                        <rect key="frame" x="6" y="7" width="13" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="13" id="4QB-MI-3D1"/>
+                                        </constraints>
+                                        <animations/>
+                                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cbG-6I-z2J">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="BS5-4N-1UF"/>
+                                    <constraint firstAttribute="bottom" secondItem="4lu-bs-tNJ" secondAttribute="bottom" constant="8" id="ETK-Aa-NhY"/>
+                                    <constraint firstItem="4lu-bs-tNJ" firstAttribute="top" secondItem="hAu-9X-JUf" secondAttribute="top" constant="8" id="c4N-vh-cbc"/>
+                                    <constraint firstItem="4lu-bs-tNJ" firstAttribute="leading" secondItem="hAu-9X-JUf" secondAttribute="leading" constant="6" id="ypR-fN-umN"/>
+                                </constraints>
+                                <animations/>
+                            </customView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="0zZ-VN-d0a" firstAttribute="top" secondItem="hAu-9X-JUf" secondAttribute="bottom" constant="58" id="Fu6-y0-ASa"/>
+                            <constraint firstItem="0zZ-VN-d0a" firstAttribute="leading" secondItem="mrP-j4-kma" secondAttribute="leading" constant="50" id="GK2-KK-Nma"/>
+                            <constraint firstItem="hAu-9X-JUf" firstAttribute="top" secondItem="mrP-j4-kma" secondAttribute="top" constant="20" id="OR4-1N-adn"/>
+                            <constraint firstAttribute="trailing" secondItem="0zZ-VN-d0a" secondAttribute="trailing" constant="50" id="UWW-II-Bgo"/>
+                            <constraint firstAttribute="trailing" secondItem="ZXJ-QG-GWg" secondAttribute="trailing" constant="50" id="cUC-4J-Plv"/>
+                            <constraint firstItem="ZXJ-QG-GWg" firstAttribute="leading" secondItem="mrP-j4-kma" secondAttribute="leading" constant="50" id="dut-vu-aVb"/>
+                            <constraint firstItem="ZXJ-QG-GWg" firstAttribute="top" secondItem="0zZ-VN-d0a" secondAttribute="bottom" constant="2" id="glN-1S-ebC"/>
+                            <constraint firstItem="hAu-9X-JUf" firstAttribute="leading" secondItem="mrP-j4-kma" secondAttribute="leading" constant="50" id="lpy-Fl-rIv"/>
+                            <constraint firstAttribute="trailing" secondItem="hAu-9X-JUf" secondAttribute="trailing" constant="50" id="paS-Ls-JmY"/>
+                        </constraints>
                         <animations/>
                     </view>
                     <connections>
-                        <outlet property="splitTrackView" destination="0zZ-VN-d0a" id="paF-Gw-Phm"/>
+                        <outlet property="splitTrackView" destination="0zZ-VN-d0a" id="4KC-PU-ToX"/>
+                        <outlet property="splitTrackViewHeightConstraint" destination="wi8-z1-QuV" id="roO-Ta-bUJ"/>
                     </connections>
                 </viewController>
                 <customObject id="63k-Hu-yYx" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

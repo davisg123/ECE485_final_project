@@ -12,9 +12,19 @@ class MBTrackView: NSView, NSSplitViewDelegate {
     
     @IBOutlet var view : NSView?
     @IBOutlet var splitView : NSSplitView?
+    var borderColor : NSColor?
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
+        
+        NSBundle.mainBundle().loadNibNamed("MBTrackView", owner: self, topLevelObjects: nil)
+        
+        setContentFrame()
+        
+        self.wantsLayer = true
+        self.layer?.cornerRadius = 5.0
+        
+        self.addSubview(self.view!)
     }
 
     required init?(coder: NSCoder) {
@@ -43,7 +53,8 @@ class MBTrackView: NSView, NSSplitViewDelegate {
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
 
-        // Drawing code here.
+        self.layer?.borderColor = borderColor!.CGColor
+        self.layer?.borderWidth = 1.0
     }
     
     func splitView(splitView: NSSplitView, shouldAdjustSizeOfSubview view: NSView) -> Bool {
@@ -53,6 +64,20 @@ class MBTrackView: NSView, NSSplitViewDelegate {
     func splitView(splitView: NSSplitView, shouldHideDividerAtIndex dividerIndex: Int) -> Bool {
         //hide the divider of the track header view
         return dividerIndex == 0
+    }
+    
+    func splitView(splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+        if (dividerIndex == 0){
+            return 70;
+        }
+        return CGFloat.max
+    }
+    
+    func splitView(splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+        if (dividerIndex == 0){
+            return 70;
+        }
+        return CGFloat.min
     }
     
 }
