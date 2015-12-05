@@ -22,6 +22,8 @@
 		72A9F32E1C0D279B008E7BCF /* MBDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9F32D1C0D279B008E7BCF /* MBDataModel.swift */; };
 		72A9F3331C0D4593008E7BCF /* Matlab Functions in Resources */ = {isa = PBXBuildFile; fileRef = 72A9F3321C0D4593008E7BCF /* Matlab Functions */; };
 		72F69E6C1C137C69002BA041 /* MBTrackHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F69E6B1C137C69002BA041 /* MBTrackHeaderView.swift */; };
+		72F69EA51C139E49002BA041 /* MBNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F69EA41C139E49002BA041 /* MBNoteView.swift */; };
+		72F69EA71C139E6A002BA041 /* MBNoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F69EA61C139E6A002BA041 /* MBNoteView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		72A9F32D1C0D279B008E7BCF /* MBDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBDataModel.swift; sourceTree = "<group>"; };
 		72A9F3321C0D4593008E7BCF /* Matlab Functions */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Matlab Functions"; path = "ECE485_final_project/Matlab Functions"; sourceTree = SOURCE_ROOT; };
 		72F69E6B1C137C69002BA041 /* MBTrackHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MBTrackHeaderView.swift; path = ../MBTrackHeaderView.swift; sourceTree = "<group>"; };
+		72F69EA41C139E49002BA041 /* MBNoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBNoteView.swift; sourceTree = "<group>"; };
+		72F69EA61C139E6A002BA041 /* MBNoteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBNoteView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				72A985281C1127E600937E81 /* MBColorableView.swift */,
 				7267B95A1C121C540029E125 /* MBTrackView.swift */,
 				7267B95C1C121C630029E125 /* MBTrackView.xib */,
+				72F69EA41C139E49002BA041 /* MBNoteView.swift */,
+				72F69EA61C139E6A002BA041 /* MBNoteView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -278,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72F69EA71C139E6A002BA041 /* MBNoteView.xib in Resources */,
 				72A9F3331C0D4593008E7BCF /* Matlab Functions in Resources */,
 				72A9F3041C0D2563008E7BCF /* Assets.xcassets in Resources */,
 				72A9F3071C0D2563008E7BCF /* Main.storyboard in Resources */,
@@ -311,6 +318,7 @@
 				72A9F3001C0D2563008E7BCF /* AppDelegate.swift in Sources */,
 				72A9F32E1C0D279B008E7BCF /* MBDataModel.swift in Sources */,
 				7267B95B1C121C540029E125 /* MBTrackView.swift in Sources */,
+				72F69EA51C139E49002BA041 /* MBNoteView.swift in Sources */,
 				72A9851E1C1125E900937E81 /* MBNoteSelectorViewController.swift in Sources */,
 				72A985251C1126F100937E81 /* MBPianoKey.swift in Sources */,
 				72A985291C1127E600937E81 /* MBColorableView.swift in Sources */,

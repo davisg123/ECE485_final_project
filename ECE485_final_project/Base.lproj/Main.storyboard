@@ -799,6 +799,7 @@
                         <animations/>
                     </view>
                     <connections>
+                        <outlet property="initialTrackView" destination="baz-Iv-VpC" id="0NW-a9-cWj"/>
                         <outlet property="splitTrackView" destination="0zZ-VN-d0a" id="4KC-PU-ToX"/>
                         <outlet property="splitTrackViewHeightConstraint" destination="wi8-z1-QuV" id="roO-Ta-bUJ"/>
                     </connections>

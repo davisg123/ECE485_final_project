@@ -10,8 +10,12 @@
                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                     <color key="value" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                 </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="selectedBorderColor">
+                    <color key="value" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="headerView" destination="1v3-vi-rX0" id="aHa-gt-LkW"/>
                 <outlet property="splitView" destination="hPy-rO-Ufv" id="NpV-F5-q6A"/>
                 <outlet property="view" destination="c22-O7-iKe" id="wRx-QH-Vow"/>
             </connections>
@@ -49,8 +53,11 @@
                             </constraints>
                             <animations/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                <userDefinedRuntimeAttribute type="color" keyPath="unselectedColor">
                                     <color key="value" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                    <color key="value" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </customView>

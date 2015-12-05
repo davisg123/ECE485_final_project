@@ -8,31 +8,39 @@
 
 import Cocoa
 
-class MBTrackView: NSView, NSSplitViewDelegate {
+protocol MBTrackViewClickDelegate{
+    func trackSelected(sender:MBTrackView)
+}
+
+class MBTrackView: NSView, NSSplitViewDelegate, MBTrackHeaderViewClickDelegate {
+    
+    var delegate : MBTrackViewClickDelegate?
     
     @IBOutlet var view : NSView?
     @IBOutlet var splitView : NSSplitView?
+    @IBOutlet var headerView : MBTrackHeaderView?
     var borderColor : NSColor?
+    var selectedBorderColor : NSColor?
+    var selected : Bool!
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
-        
-        NSBundle.mainBundle().loadNibNamed("MBTrackView", owner: self, topLevelObjects: nil)
-        
-        setContentFrame()
-        
-        self.wantsLayer = true
-        self.layer?.cornerRadius = 5.0
-        
-        self.addSubview(self.view!)
+        commonInit()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
+        commonInit()
+    }
+    
+    func commonInit(){
+        selected = false
         NSBundle.mainBundle().loadNibNamed("MBTrackView", owner: self, topLevelObjects: nil)
         
         setContentFrame()
+        
+        headerView?.clickDelegate = self
         
         self.wantsLayer = true
         self.layer?.cornerRadius = 5.0
@@ -53,9 +61,21 @@ class MBTrackView: NSView, NSSplitViewDelegate {
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
 
-        self.layer?.borderColor = borderColor!.CGColor
+        self.layer?.borderColor = selected! ? selectedBorderColor!.CGColor : borderColor!.CGColor
         self.layer?.borderWidth = 1.0
     }
+    
+    func setSelected(selected : Bool) {
+        self.headerView?.setSelected(selected)
+        if (selected){
+            self.layer?.borderColor = selectedBorderColor!.CGColor
+        }
+        else{
+            self.layer?.borderColor = borderColor!.CGColor
+        }
+    }
+    
+    //MARK: split view delegate
     
     func splitView(splitView: NSSplitView, shouldAdjustSizeOfSubview view: NSView) -> Bool {
         return true;
@@ -78,6 +98,12 @@ class MBTrackView: NSView, NSSplitViewDelegate {
             return 70;
         }
         return CGFloat.min
+    }
+    
+    //MARK: header view delegate
+    
+    func headerViewClicked() {
+        delegate?.trackSelected(self)
     }
     
 }

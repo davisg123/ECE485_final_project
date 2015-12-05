@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class MBCentralViewController: NSViewController, MatlabEventDelegate, NSSplitViewDelegate {
+class MBCentralViewController: NSViewController, MatlabEventDelegate, NSSplitViewDelegate, MBTrackViewClickDelegate {
     
     let NEW_TRACK_WIDTH = 700
     let NEW_TRACK_HEIGHT = 100
@@ -16,16 +16,21 @@ class MBCentralViewController: NSViewController, MatlabEventDelegate, NSSplitVie
     let dataModel = MBDataModel.sharedInstance
     @IBOutlet var splitTrackView : NSSplitView?
     @IBOutlet var splitTrackViewHeightConstraint : NSLayoutConstraint?
+    @IBOutlet var initialTrackView : MBTrackView?
+    
+    var selectedTrack : MBTrackView?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initialTrackView?.delegate = self;
         dataModel.matlabEventDelegate = self
         // Do view setup here.
     }
     
     @IBAction func addNewTrack(sender: NSButton) {
         let newTrackView = MBTrackView(frame: NSRect(x: 0, y: 0, width: NEW_TRACK_WIDTH, height: NEW_TRACK_HEIGHT))
+        newTrackView.delegate = self
         splitTrackView?.addArrangedSubview(newTrackView)
         splitTrackViewHeightConstraint?.constant = splitTrackViewHeightConstraint!.constant + 100
         splitTrackView?.adjustSubviews()
@@ -47,5 +52,14 @@ class MBCentralViewController: NSViewController, MatlabEventDelegate, NSSplitVie
     func splitView(splitView: NSSplitView, shouldAdjustSizeOfSubview view: NSView) -> Bool {
         return true
     }
+    
+    //MARK: MBTrackViewClickDelegate
+    
+    func trackSelected(sender:MBTrackView) {
+        selectedTrack?.setSelected(false)
+        sender.setSelected(true)
+        selectedTrack = sender
+    }
+    
     
 }
