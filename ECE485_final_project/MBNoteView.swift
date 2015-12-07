@@ -45,9 +45,13 @@ class MBNoteView: MBColorableView {
 
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
-        
+        updateContent()
+    }
+    
+    func updateContent(){
         self.noteView?.stringValue = note!.noteLetter
         self.octaveView?.stringValue = String(format: "Octave %@", note!.octave)
+        noteDur?.stringValue = String(format: "%d", note!.duration)
     }
     
     func setContentFrame(){

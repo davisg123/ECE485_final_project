@@ -20,6 +20,19 @@ class MBNote: NSObject {
         super.init()
     }
     
+    required init(coder aDecoder: NSCoder) {
+        super.init()
+        noteLetter = aDecoder.decodeObjectForKey("noteLetter") as! String
+        octave = aDecoder.decodeObjectForKey("octave") as! String
+        duration = aDecoder.decodeObjectForKey("duration") as! Int
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(noteLetter, forKey: "noteLetter")
+        aCoder.encodeObject(octave, forKey: "octave")
+        aCoder.encodeObject(duration, forKey: "duration")
+    }
+    
     func toString() -> String{
         return String(format: "%@%@", noteLetter,octave)
     }

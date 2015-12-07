@@ -51,6 +51,47 @@ class MBCentralViewController: NSViewController, MatlabEventDelegate, NSSplitVie
         print(error)
     }
     
+    //MARK: saving
+    
+    @IBAction func saveFile(sender: NSButton) {
+        var noteArrays : [[MBNote]] = []
+        for sub in splitTrackView!.subviews{
+            let trackView = sub as! MBTrackView
+            noteArrays.append(trackView.noteArray())
+        }
+        let data = NSKeyedArchiver.archivedDataWithRootObject(noteArrays)
+        let savePanel = NSSavePanel()
+        savePanel.beginWithCompletionHandler { (result: Int) -> Void in
+            if result == NSFileHandlingPanelOKButton {
+                let exportedFileURL = savePanel.URL
+                data.writeToFile(exportedFileURL!.path!, atomically: true)
+            }
+        }
+    }
+    
+    @IBAction func openFile(sender: NSButton) {
+        let openPanel = NSOpenPanel()
+        openPanel.beginWithCompletionHandler { (result: Int) -> Void in
+            if result == NSFileHandlingPanelOKButton {
+                let openURL = openPanel.URL
+                let data = NSData(contentsOfURL:openURL!)
+                let noteArrays = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! [[MBNote]]
+                
+                while self.splitTrackView!.subviews.count < noteArrays.count {
+                    self.addNewTrack(NSButton())
+                }
+                for i in 0...noteArrays.count - 1 {
+                    let noteArray = noteArrays[i]
+                    for note in noteArray{
+                        
+                    }
+                    let subview = self.splitTrackView?.subviews[i] as! MBTrackView
+                    subview.rebuildWithNotes(noteArray)
+                }
+            }
+        }
+    }
+    
     //MARK: splitview delegate
     
     func splitView(splitView: NSSplitView, shouldAdjustSizeOfSubview view: NSView) -> Bool {

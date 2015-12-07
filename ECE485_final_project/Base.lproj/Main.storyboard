@@ -752,12 +752,47 @@
                                             <action selector="addNewTrack:" target="iKd-t9-XjI" id="Qgp-Ht-fxw"/>
                                         </connections>
                                     </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jmL-p2-3UO">
+                                        <rect key="frame" x="9" y="0.0" width="70" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="CqX-Hz-1vc"/>
+                                            <constraint firstAttribute="width" constant="58" id="Irk-nM-ha5"/>
+                                        </constraints>
+                                        <animations/>
+                                        <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1la-PQ-Spt">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="saveFile:" target="iKd-t9-XjI" id="GW7-5w-BBP"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zOr-jo-HV4">
+                                        <rect key="frame" x="79" y="0.0" width="70" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="58" id="X1g-0j-17Z"/>
+                                            <constraint firstAttribute="height" constant="21" id="ebp-lT-0nY"/>
+                                        </constraints>
+                                        <animations/>
+                                        <buttonCell key="cell" type="push" title="Load" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mUp-kP-QNT">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="openFile:" target="iKd-t9-XjI" id="Ld3-6z-tpc"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="zOr-jo-HV4" firstAttribute="top" secondItem="ZXJ-QG-GWg" secondAttribute="top" constant="7" id="4aB-Oh-3N2"/>
                                     <constraint firstAttribute="height" constant="35" id="AJ3-TN-0dR"/>
+                                    <constraint firstItem="jmL-p2-3UO" firstAttribute="centerY" secondItem="ZXJ-QG-GWg" secondAttribute="centerY" id="acA-tw-lvf"/>
                                     <constraint firstItem="gy6-Vu-b8E" firstAttribute="top" secondItem="ZXJ-QG-GWg" secondAttribute="top" constant="8" id="dog-k8-qlP"/>
+                                    <constraint firstAttribute="bottom" secondItem="zOr-jo-HV4" secondAttribute="bottom" constant="7" id="mdl-5d-1cr"/>
                                     <constraint firstAttribute="trailing" secondItem="gy6-Vu-b8E" secondAttribute="trailing" constant="5" id="pr6-cP-yaa"/>
                                     <constraint firstAttribute="bottom" secondItem="gy6-Vu-b8E" secondAttribute="bottom" constant="8" id="q2V-cl-qHb"/>
+                                    <constraint firstItem="zOr-jo-HV4" firstAttribute="leading" secondItem="jmL-p2-3UO" secondAttribute="trailing" constant="12" id="u13-kD-5SC"/>
+                                    <constraint firstItem="jmL-p2-3UO" firstAttribute="leading" secondItem="ZXJ-QG-GWg" secondAttribute="leading" constant="15" id="z0G-pu-rnB"/>
                                 </constraints>
                                 <animations/>
                             </customView>
