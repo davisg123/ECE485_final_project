@@ -75,10 +75,27 @@ class MBTrackView: NSView, NSSplitViewDelegate, MBTrackHeaderViewClickDelegate {
         }
     }
     
+    //MARK: adding notes
+    
+    func addNoteBlock(note: MBNote){
+        let noteView = MBNoteView(frame: NSRect(x: 0, y: 0, width: 50, height: 70),note: note)
+        splitView?.insertArrangedSubview(noteView, atIndex: 1)
+    }
+    
     //MARK: split view delegate
     
     func splitView(splitView: NSSplitView, shouldAdjustSizeOfSubview view: NSView) -> Bool {
-        return true;
+        return true
+    }
+    
+    func splitView(splitView: NSSplitView, constrainSplitPosition proposedPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+        if (dividerIndex != 0){
+            //round to nearest 25
+            let proposedPositionInt = Int(proposedPosition)
+            let widthRounded = proposedPositionInt%25==0 ? proposedPositionInt : proposedPositionInt+25-(proposedPositionInt%25)
+            return CGFloat(widthRounded)
+        }
+        return proposedPosition
     }
     
     func splitView(splitView: NSSplitView, shouldHideDividerAtIndex dividerIndex: Int) -> Bool {

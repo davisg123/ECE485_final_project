@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class MBCentralViewController: NSViewController, MatlabEventDelegate, NSSplitViewDelegate, MBTrackViewClickDelegate {
+class MBCentralViewController: NSViewController, MatlabEventDelegate, NSSplitViewDelegate, MBTrackViewClickDelegate, MBNoteSelectorDelegate {
     
     let NEW_TRACK_WIDTH = 700
     let NEW_TRACK_HEIGHT = 100
@@ -59,6 +59,24 @@ class MBCentralViewController: NSViewController, MatlabEventDelegate, NSSplitVie
         selectedTrack?.setSelected(false)
         sender.setSelected(true)
         selectedTrack = sender
+    }
+    
+    //MARK: segue
+    
+    override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
+        let destination = segue.destinationController as! MBNoteSelectorViewController
+        destination.delegate = self
+    }
+    
+    //MARK: MBNoteSelectorDelegate
+    
+    func didSelectNote(note: MBNote) {
+        if (selectedTrack != nil){
+            selectedTrack?.addNoteBlock(note)
+        }
+        else{
+            initialTrackView?.addNoteBlock(note)
+        }
     }
     
     

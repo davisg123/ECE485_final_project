@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7267B95B1C121C540029E125 /* MBTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7267B95A1C121C540029E125 /* MBTrackView.swift */; };
 		7267B95D1C121C630029E125 /* MBTrackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7267B95C1C121C630029E125 /* MBTrackView.xib */; };
+		729214581C14FDD20032F898 /* MBNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729214571C14FDD20032F898 /* MBNote.swift */; };
 		72A9851B1C11235B00937E81 /* MBCentralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9851A1C11235B00937E81 /* MBCentralViewController.swift */; };
 		72A9851E1C1125E900937E81 /* MBNoteSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9851D1C1125E900937E81 /* MBNoteSelectorViewController.swift */; };
 		72A985251C1126F100937E81 /* MBPianoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A985241C1126F100937E81 /* MBPianoKey.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		7267B95A1C121C540029E125 /* MBTrackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTrackView.swift; sourceTree = "<group>"; };
 		7267B95C1C121C630029E125 /* MBTrackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBTrackView.xib; sourceTree = "<group>"; };
+		729214571C14FDD20032F898 /* MBNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBNote.swift; sourceTree = "<group>"; };
 		72A9851A1C11235B00937E81 /* MBCentralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBCentralViewController.swift; sourceTree = "<group>"; };
 		72A9851D1C1125E900937E81 /* MBNoteSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBNoteSelectorViewController.swift; sourceTree = "<group>"; };
 		72A985241C1126F100937E81 /* MBPianoKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBPianoKey.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		729214591C14FDD60032F898 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				729214571C14FDD20032F898 /* MBNote.swift */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
 		72A9851C1C1125AC00937E81 /* VCs */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +184,7 @@
 		72A9F32A1C0D2613008E7BCF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				729214591C14FDD60032F898 /* Objects */,
 				72A9F32D1C0D279B008E7BCF /* MBDataModel.swift */,
 			);
 			name = Model;
@@ -321,6 +332,7 @@
 				72F69EA51C139E49002BA041 /* MBNoteView.swift in Sources */,
 				72A9851E1C1125E900937E81 /* MBNoteSelectorViewController.swift in Sources */,
 				72A985251C1126F100937E81 /* MBPianoKey.swift in Sources */,
+				729214581C14FDD20032F898 /* MBNote.swift in Sources */,
 				72A985291C1127E600937E81 /* MBColorableView.swift in Sources */,
 				72A9851B1C11235B00937E81 /* MBCentralViewController.swift in Sources */,
 			);

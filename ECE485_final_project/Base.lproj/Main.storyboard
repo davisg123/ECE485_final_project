@@ -774,6 +774,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <segue destination="Fjy-Vq-9C8" kind="popover" popoverAnchorView="4lu-bs-tNJ" popoverBehavior="t" preferredEdge="maxY" id="KHk-mY-QHx"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -816,17 +819,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zkb-Zg-4Zu">
-                                <rect key="frame" x="207" y="257" width="17" height="17"/>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfl-KK-tIt">
+                                <rect key="frame" x="163" y="256" width="126" height="26"/>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Hi" id="ATJ-bw-KPI">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                                <popUpButtonCell key="cell" type="push" title="Octave 3" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="DdW-0c-dg6" id="kgd-gG-h8i">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="ewZ-SL-dFm">
+                                        <items>
+                                            <menuItem title="Octave 3" state="on" id="DdW-0c-dg6"/>
+                                            <menuItem title="Item 2" id="b43-sz-Oqk"/>
+                                            <menuItem title="Item 3" id="huv-JY-e9J"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jvM-ea-9WO" customClass="MBColorableView" customModule="ECE485_final_project" customModuleProvider="target">
-                                <rect key="frame" x="116" y="78" width="199" height="144"/>
+                                <rect key="frame" x="126" y="78" width="199" height="144"/>
                                 <subviews>
                                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s84-gZ-Cv0" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
                                         <rect key="frame" x="3" y="4" width="25" height="146"/>
@@ -909,6 +918,9 @@
                         </subviews>
                         <animations/>
                     </view>
+                    <connections>
+                        <outlet property="octaveSelector" destination="jfl-KK-tIt" id="xth-Wb-ApI"/>
+                    </connections>
                 </viewController>
                 <customObject id="DSS-m9-smN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
