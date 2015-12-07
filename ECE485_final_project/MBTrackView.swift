@@ -119,7 +119,7 @@ class MBTrackView: NSView, NSSplitViewDelegate, MBTrackHeaderViewClickDelegate {
         if (dividerIndex != 0){
             //round to nearest 25
             let proposedPositionInt = Int(proposedPosition)
-            let widthRounded = proposedPositionInt%25==0 ? proposedPositionInt : proposedPositionInt+25-(proposedPositionInt%25)
+            let widthRounded = proposedPositionInt%50==0 ? proposedPositionInt : proposedPositionInt+50-(proposedPositionInt%50) + 24
             return CGFloat(widthRounded)
         }
         return proposedPosition
@@ -141,7 +141,9 @@ class MBTrackView: NSView, NSSplitViewDelegate, MBTrackHeaderViewClickDelegate {
         if (dividerIndex == 0){
             return 70;
         }
-        return CGFloat.min
+        else{
+            return 50;
+        }
     }
     
     //MARK: header view delegate
