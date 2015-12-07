@@ -96,7 +96,6 @@ class MBDataModel : NSObject {
     - parameter command: Command to process
     */
     func issueCommand(command:String){
-        
         taskInput?.writeData(command.dataUsingEncoding(NSASCIIStringEncoding)!)
     }
     
@@ -105,6 +104,31 @@ class MBDataModel : NSObject {
     func setMatlabDirectory(){
         let path = NSBundle.mainBundle().pathForResource(MATLAB_FUNCTION_FOLDER, ofType: nil)
         issueCommand(String(format: "cd('%@')\n", arguments: [path!]))
+    }
+    
+    //MARK: playing
+    
+    func playNoteArray(notes : [MBNote]){
+        //[dtfs_wave(F,L,Fs,W),...]
+        var output : String = "a = ["
+        for note : MBNote in notes {
+            output.appendContentsOf(makeDtfsWaveFunc(note))
+            if (notes.last != note){
+                output.appendContentsOf(",")
+            }
+        }
+        output.appendContentsOf("];\n")
+        issueCommand(output)
+        issueCommand("soundsc(a,8000);\n")
+    }
+    
+    func makeDtfsWaveFunc(note : MBNote) -> String{
+        //dtfs_wave(F,L,Fs,W)
+        return String(format: "dtfs_wave(%@,%f,%d,%@)", makeNoteFreqFunc(note),note.secondDuration(),8000,"'Square'")
+    }
+    
+    func makeNoteFreqFunc(note : MBNote) -> String{
+        return String(format: "noteFreq('%@')", note.toString())
     }
     
     //MARK: listeners

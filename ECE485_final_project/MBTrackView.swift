@@ -68,6 +68,7 @@ class MBTrackView: NSView, NSSplitViewDelegate, MBTrackHeaderViewClickDelegate {
     
     func setSelected(selected : Bool) {
         self.headerView?.setSelected(selected)
+        self.selected = true
         if (selected){
             self.layer?.borderColor = selectedBorderColor!.CGColor
         }
@@ -80,7 +81,24 @@ class MBTrackView: NSView, NSSplitViewDelegate, MBTrackHeaderViewClickDelegate {
     
     func addNoteBlock(note: MBNote){
         let noteView = MBNoteView(frame: NSRect(x: 0, y: 0, width: 50, height: 70),note: note)
-        splitView?.insertArrangedSubview(noteView, atIndex: 1)
+        splitView?.insertArrangedSubview(noteView, atIndex: splitView!.subviews.count-1)
+    }
+    
+    //MARK: output
+    
+    func noteArray() -> [MBNote]{
+        var notes : [MBNote] = []
+        for view in splitView!.subviews{
+            if (view.isKindOfClass(MBNoteView)){
+                let noteView = view as! MBNoteView
+                notes.append(noteView.note!)
+            }
+        }
+        return notes
+    }
+    
+    func playNotes(){
+        MBDataModel.sharedInstance.playNoteArray(noteArray())
     }
     
     //MARK: split view delegate
@@ -121,7 +139,13 @@ class MBTrackView: NSView, NSSplitViewDelegate, MBTrackHeaderViewClickDelegate {
     //MARK: header view delegate
     
     func headerViewClicked() {
-        delegate?.trackSelected(self)
+        if (selected!){
+            //play
+            playNotes()
+        }
+        else{
+            delegate?.trackSelected(self)
+        }
     }
     
 }

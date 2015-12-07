@@ -23,4 +23,8 @@ class MBNote: NSObject {
     func toString() -> String{
         return String(format: "%@%@", noteLetter,octave)
     }
+    
+    func secondDuration() -> Float{
+        return Float(duration) * 0.25
+    }
 }

@@ -35,10 +35,10 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dnm-zS-Wfg">
-                                    <rect key="frame" x="238" y="37" width="60" height="17"/>
+                                    <rect key="frame" x="238" y="43" width="60" height="17"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="17" id="hxS-W9-6il"/>
-                                        <constraint firstAttribute="width" constant="55.5" id="u60-mr-05b"/>
+                                        <constraint firstAttribute="width" constant="56" id="e3X-cB-02d"/>
+                                        <constraint firstAttribute="height" constant="17" id="veI-KJ-Fcs"/>
                                     </constraints>
                                     <animations/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Track X" id="dvb-2o-jJ7">
@@ -48,10 +48,10 @@
                                     </textFieldCell>
                                 </textField>
                                 <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="amn-qS-gLC">
-                                    <rect key="frame" x="254" y="10" width="28" height="30"/>
+                                    <rect key="frame" x="254" y="16" width="28" height="30"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="24" id="iU9-eO-fT6"/>
-                                        <constraint firstAttribute="width" constant="24" id="s5W-hB-L4i"/>
+                                        <constraint firstAttribute="height" constant="24" id="81j-4p-PAC"/>
+                                        <constraint firstAttribute="width" constant="24" id="iGy-2M-FZd"/>
                                     </constraints>
                                     <animations/>
                                     <sliderCell key="cell" alignment="left" maxValue="100" doubleValue="100" allowsTickMarkValuesOnly="YES" sliderType="circular" id="oAm-IK-ksV"/>
@@ -60,10 +60,10 @@
                                     </connections>
                                 </slider>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eXj-0O-H5p">
-                                    <rect key="frame" x="250" y="-1" width="37" height="13"/>
+                                    <rect key="frame" x="250" y="5" width="37" height="13"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="33" id="bqU-sV-6vO"/>
-                                        <constraint firstAttribute="height" constant="13" id="jhx-Xz-DgE"/>
+                                        <constraint firstAttribute="height" constant="13" id="0Tl-LV-Vsb"/>
+                                        <constraint firstAttribute="width" constant="33" id="8vx-R3-r8y"/>
                                     </constraints>
                                     <animations/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="100" id="Xa3-il-tKp">
@@ -74,12 +74,12 @@
                                 </textField>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="amn-qS-gLC" firstAttribute="top" secondItem="Dnm-zS-Wfg" secondAttribute="bottom" id="0Ln-8y-PLZ"/>
-                                <constraint firstItem="amn-qS-gLC" firstAttribute="centerX" secondItem="1v3-vi-rX0" secondAttribute="centerX" id="1cl-Js-3M4"/>
-                                <constraint firstItem="Dnm-zS-Wfg" firstAttribute="centerX" secondItem="1v3-vi-rX0" secondAttribute="centerX" id="Gbo-w0-jXf"/>
-                                <constraint firstItem="Dnm-zS-Wfg" firstAttribute="centerY" secondItem="1v3-vi-rX0" secondAttribute="centerY" id="dNs-FD-0KS"/>
-                                <constraint firstItem="eXj-0O-H5p" firstAttribute="centerX" secondItem="1v3-vi-rX0" secondAttribute="centerX" id="nKy-EU-Y3A"/>
-                                <constraint firstItem="eXj-0O-H5p" firstAttribute="top" secondItem="Dnm-zS-Wfg" secondAttribute="bottom" constant="25" id="nSS-fv-eRZ"/>
+                                <constraint firstItem="eXj-0O-H5p" firstAttribute="centerX" secondItem="1v3-vi-rX0" secondAttribute="centerX" id="Ht1-EO-Wm2"/>
+                                <constraint firstItem="amn-qS-gLC" firstAttribute="top" secondItem="Dnm-zS-Wfg" secondAttribute="bottom" id="Ncj-TU-JM9"/>
+                                <constraint firstItem="amn-qS-gLC" firstAttribute="centerX" secondItem="1v3-vi-rX0" secondAttribute="centerX" id="fxy-A8-9JA"/>
+                                <constraint firstItem="Dnm-zS-Wfg" firstAttribute="top" secondItem="1v3-vi-rX0" secondAttribute="top" constant="30" id="kKg-2W-bST"/>
+                                <constraint firstItem="Dnm-zS-Wfg" firstAttribute="centerX" secondItem="1v3-vi-rX0" secondAttribute="centerX" id="kwi-AW-ibH"/>
+                                <constraint firstItem="eXj-0O-H5p" firstAttribute="top" secondItem="amn-qS-gLC" secondAttribute="bottom" constant="1" id="rXf-Gm-7S5"/>
                             </constraints>
                             <animations/>
                             <userDefinedRuntimeAttributes>
