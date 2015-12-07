@@ -1,10 +1,8 @@
-function [y] = dtfs_wave(F,L,Fs,w);
+function [y] = dtfs_wave(F,L,Fs,w)
 
          
 n = 0:(L*Fs-1);
 K = floor(Fs/2/F);
-T = 1/F;
-
 x = 0*n;
 
 if (strcmp(w,'square'))
@@ -16,7 +14,7 @@ if (strcmp(w,'square'))
         end;
     
         ck = (2./(pi*k))*sin((pi*k)./2);   
-        xn = ck*exp((2*pi*j*k*F*n)./Fs);    % Fourier Series computation
+        xn = ck*exp((2*pi*1j*k*F*n)./Fs);    % Fourier Series computation
         x = x + xn;
     end
 else
@@ -27,7 +25,7 @@ else
         end;
       
         bk = (2./((pi^2)*(k^2)))*(1-(-1)^k);
-        xn = bk*exp((2*pi*j*k*F*n)./Fs);    % Fourier Series computation
+        xn = bk*exp((2*pi*1j*k*F*n)./Fs);    % Fourier Series computation
         x = x + xn;
     end
 end
