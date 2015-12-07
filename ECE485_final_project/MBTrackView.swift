@@ -16,6 +16,7 @@ class MBTrackView: NSView, NSSplitViewDelegate, MBTrackHeaderViewClickDelegate {
     
     var delegate : MBTrackViewClickDelegate?
     
+    @IBOutlet var trackNumLabel : NSTextField?
     @IBOutlet var view : NSView?
     @IBOutlet var splitView : NSSplitView?
     @IBOutlet var headerView : MBTrackHeaderView?

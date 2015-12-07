@@ -17,24 +17,25 @@
             <connections>
                 <outlet property="headerView" destination="1v3-vi-rX0" id="aHa-gt-LkW"/>
                 <outlet property="splitView" destination="hPy-rO-Ufv" id="NpV-F5-q6A"/>
+                <outlet property="trackNumLabel" destination="Dnm-zS-Wfg" id="EKY-kD-JLz"/>
                 <outlet property="view" destination="c22-O7-iKe" id="wRx-QH-Vow"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="700" height="70"/>
+            <rect key="frame" x="0.0" y="0.0" width="700" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPy-rO-Ufv">
-                    <rect key="frame" x="0.0" y="0.0" width="700" height="70"/>
+                    <rect key="frame" x="0.0" y="0.0" width="700" height="90"/>
                     <subviews>
                         <customView id="1v3-vi-rX0" customClass="MBTrackHeaderView" customModule="ECE485_final_project" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="536" height="70"/>
+                            <rect key="frame" x="0.0" y="0.0" width="536" height="90"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dnm-zS-Wfg">
-                                    <rect key="frame" x="238" y="27" width="60" height="17"/>
+                                    <rect key="frame" x="238" y="37" width="60" height="17"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="17" id="hxS-W9-6il"/>
                                         <constraint firstAttribute="width" constant="55.5" id="u60-mr-05b"/>
@@ -46,10 +47,39 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
+                                <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="amn-qS-gLC">
+                                    <rect key="frame" x="254" y="10" width="28" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="iU9-eO-fT6"/>
+                                        <constraint firstAttribute="width" constant="24" id="s5W-hB-L4i"/>
+                                    </constraints>
+                                    <animations/>
+                                    <sliderCell key="cell" alignment="left" maxValue="100" doubleValue="100" allowsTickMarkValuesOnly="YES" sliderType="circular" id="oAm-IK-ksV"/>
+                                    <connections>
+                                        <action selector="takeIntegerValueFrom:" target="eXj-0O-H5p" id="pQO-ET-kXI"/>
+                                    </connections>
+                                </slider>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eXj-0O-H5p">
+                                    <rect key="frame" x="250" y="-1" width="37" height="13"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="33" id="bqU-sV-6vO"/>
+                                        <constraint firstAttribute="height" constant="13" id="jhx-Xz-DgE"/>
+                                    </constraints>
+                                    <animations/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="100" id="Xa3-il-tKp">
+                                        <font key="font" metaFont="system" size="10"/>
+                                        <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
                             </subviews>
                             <constraints>
+                                <constraint firstItem="amn-qS-gLC" firstAttribute="top" secondItem="Dnm-zS-Wfg" secondAttribute="bottom" id="0Ln-8y-PLZ"/>
+                                <constraint firstItem="amn-qS-gLC" firstAttribute="centerX" secondItem="1v3-vi-rX0" secondAttribute="centerX" id="1cl-Js-3M4"/>
                                 <constraint firstItem="Dnm-zS-Wfg" firstAttribute="centerX" secondItem="1v3-vi-rX0" secondAttribute="centerX" id="Gbo-w0-jXf"/>
                                 <constraint firstItem="Dnm-zS-Wfg" firstAttribute="centerY" secondItem="1v3-vi-rX0" secondAttribute="centerY" id="dNs-FD-0KS"/>
+                                <constraint firstItem="eXj-0O-H5p" firstAttribute="centerX" secondItem="1v3-vi-rX0" secondAttribute="centerX" id="nKy-EU-Y3A"/>
+                                <constraint firstItem="eXj-0O-H5p" firstAttribute="top" secondItem="Dnm-zS-Wfg" secondAttribute="bottom" constant="25" id="nSS-fv-eRZ"/>
                             </constraints>
                             <animations/>
                             <userDefinedRuntimeAttributes>
@@ -62,7 +92,7 @@
                             </userDefinedRuntimeAttributes>
                         </customView>
                         <customView fixedFrame="YES" id="ZVn-2O-v14">
-                            <rect key="frame" x="537" y="0.0" width="163" height="70"/>
+                            <rect key="frame" x="537" y="0.0" width="163" height="90"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <animations/>
                         </customView>
@@ -84,6 +114,13 @@
                 <constraint firstAttribute="bottom" secondItem="hPy-rO-Ufv" secondAttribute="bottom" id="tlz-od-R4H"/>
             </constraints>
             <animations/>
+            <point key="canvasLocation" x="320" y="255"/>
         </customView>
+        <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" id="thm-9W-Cbm">
+            <rect key="frame" x="0.0" y="0.0" width="18" height="20"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <animations/>
+            <sliderCell key="cell" controlSize="small" alignment="left" maxValue="100" allowsTickMarkValuesOnly="YES" sliderType="circular" id="csZ-JD-eLZ"/>
+        </slider>
     </objects>
 </document>

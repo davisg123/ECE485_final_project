@@ -18,12 +18,15 @@ class MBCentralViewController: NSViewController, MatlabEventDelegate, NSSplitVie
     @IBOutlet var splitTrackViewHeightConstraint : NSLayoutConstraint?
     @IBOutlet var initialTrackView : MBTrackView?
     
+    var trackNumCount = 0
+    
     var selectedTrack : MBTrackView?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialTrackView?.delegate = self;
+        initialTrackView?.trackNumLabel?.stringValue = "Track " + String(trackNumCount++)
         dataModel.matlabEventDelegate = self
         // Do view setup here.
     }
@@ -31,6 +34,7 @@ class MBCentralViewController: NSViewController, MatlabEventDelegate, NSSplitVie
     @IBAction func addNewTrack(sender: NSButton) {
         let newTrackView = MBTrackView(frame: NSRect(x: 0, y: 0, width: NEW_TRACK_WIDTH, height: NEW_TRACK_HEIGHT))
         newTrackView.delegate = self
+        newTrackView.trackNumLabel?.stringValue = "Track " + String(trackNumCount++)
         splitTrackView?.addArrangedSubview(newTrackView)
         splitTrackViewHeightConstraint?.constant = splitTrackViewHeightConstraint!.constant + 100
         splitTrackView?.adjustSubviews()

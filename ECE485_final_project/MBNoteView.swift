@@ -52,6 +52,7 @@ class MBNoteView: MBColorableView {
     
     func setContentFrame(){
         let durVal = Int(floor(self.frame.size.width / 25))
+        note?.duration = durVal
         noteDur?.stringValue = String(format: "%d", durVal)
         let contentFrame = NSMakeRect(0, 0, self.frame.size.width, self.frame.size.height)
         self.view!.frame = contentFrame

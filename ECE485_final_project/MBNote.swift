@@ -11,10 +11,12 @@ import Cocoa
 class MBNote: NSObject {
     var noteLetter : String!
     var octave : String!
+    var duration : Int!
     
     required init(noteLetter : String, octave : String){
         self.noteLetter = noteLetter
         self.octave = octave
+        self.duration = 1
         super.init()
     }
     
