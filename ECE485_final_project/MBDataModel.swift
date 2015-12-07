@@ -52,8 +52,6 @@ class MBDataModel : NSObject {
         errorOutput = errorPipe.fileHandleForReading
         beginListeningForOutput()
         task.launch()
-        //comment out for actual loading time
-        self.performSelector("matlabDidLoad", withObject: nil, afterDelay: 0.1)
     }
     
     //MARK: Output processing
