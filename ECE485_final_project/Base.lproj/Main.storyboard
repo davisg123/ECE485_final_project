@@ -762,12 +762,29 @@
                                             <action selector="openFile:" target="iKd-t9-XjI" id="Ld3-6z-tpc"/>
                                         </connections>
                                     </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="w6P-4v-ZgP">
+                                        <rect key="frame" x="167" y="0.0" width="66" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="54" id="PAg-L6-fGB"/>
+                                            <constraint firstAttribute="height" constant="21" id="Ppi-If-TUt"/>
+                                        </constraints>
+                                        <animations/>
+                                        <buttonCell key="cell" type="push" title="Play" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IKH-c7-mqG">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="playAllTracks:" target="iKd-t9-XjI" id="QGw-Hx-ObD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="zOr-jo-HV4" firstAttribute="top" secondItem="ZXJ-QG-GWg" secondAttribute="top" constant="7" id="4aB-Oh-3N2"/>
                                     <constraint firstAttribute="height" constant="35" id="AJ3-TN-0dR"/>
+                                    <constraint firstItem="w6P-4v-ZgP" firstAttribute="top" secondItem="ZXJ-QG-GWg" secondAttribute="top" constant="7" id="H8y-HB-Uoc"/>
                                     <constraint firstItem="jmL-p2-3UO" firstAttribute="centerY" secondItem="ZXJ-QG-GWg" secondAttribute="centerY" id="acA-tw-lvf"/>
                                     <constraint firstItem="gy6-Vu-b8E" firstAttribute="top" secondItem="ZXJ-QG-GWg" secondAttribute="top" constant="8" id="dog-k8-qlP"/>
+                                    <constraint firstItem="w6P-4v-ZgP" firstAttribute="leading" secondItem="zOr-jo-HV4" secondAttribute="trailing" constant="30" id="iSx-jI-fYu"/>
                                     <constraint firstAttribute="bottom" secondItem="zOr-jo-HV4" secondAttribute="bottom" constant="7" id="mdl-5d-1cr"/>
                                     <constraint firstAttribute="trailing" secondItem="gy6-Vu-b8E" secondAttribute="trailing" constant="5" id="pr6-cP-yaa"/>
                                     <constraint firstAttribute="bottom" secondItem="gy6-Vu-b8E" secondAttribute="bottom" constant="8" id="q2V-cl-qHb"/>

@@ -52,6 +52,16 @@ class MBCentralViewController: NSViewController, MatlabEventDelegate, NSSplitVie
         print(error)
     }
     
+    //MARK: playing
+    @IBAction func playAllTracks(sender: NSButton) {
+        var allNotes : [[MBNote]] = []
+        for trackView in splitTrackView!.subviews{
+            let trackView = trackView as! MBTrackView
+            allNotes.append(trackView.noteArray())
+        }
+        MBDataModel.sharedInstance.playNoteMultiTrackArray(allNotes)
+    }
+    
     //MARK: saving
     
     @IBAction func saveFile(sender: NSButton) {
