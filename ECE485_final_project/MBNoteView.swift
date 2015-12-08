@@ -29,7 +29,7 @@ class MBNoteView: MBColorableView {
         self.note = note
         super.init(frame: frameRect)
         widthLocked = true
-        self.performSelector("unlockWidth", withObject: nil, afterDelay: 0.5)
+        self.performSelector("unlockWidth", withObject: nil, afterDelay: 2.0)
         NSBundle.mainBundle().loadNibNamed("MBNoteView", owner: self, topLevelObjects: nil)
         self.addSubview(self.view!)
     }

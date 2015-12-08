@@ -715,26 +715,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <splitView arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-VN-d0a">
-                                <rect key="frame" x="50" y="387" width="700" height="100"/>
-                                <subviews>
-                                    <customView fixedFrame="YES" id="baz-Iv-VpC" customClass="MBTrackView" customModule="ECE485_final_project" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="700" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <animations/>
-                                    </customView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="wi8-z1-QuV"/>
-                                </constraints>
-                                <animations/>
-                                <holdingPriorities>
-                                    <real value="250"/>
-                                </holdingPriorities>
-                                <connections>
-                                    <outlet property="delegate" destination="iKd-t9-XjI" id="NKE-Vc-adj"/>
-                                </connections>
-                            </splitView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="ZXJ-QG-GWg">
                                 <rect key="frame" x="50" y="350" width="700" height="35"/>
                                 <subviews>
@@ -822,15 +802,75 @@
                                 </constraints>
                                 <animations/>
                             </customView>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="allowed" verticalScrollElasticity="none" scrollerKnobStyle="light" translatesAutoresizingMaskIntoConstraints="NO" id="aoz-Lk-VG6">
+                                <rect key="frame" x="0.0" y="386" width="800" height="151"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="fXD-rH-86n">
+                                    <rect key="frame" x="0.0" y="0.0" width="800" height="151"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view translatesAutoresizingMaskIntoConstraints="NO" id="HCJ-N7-pLt">
+                                            <rect key="frame" x="0.0" y="0.0" width="1500" height="151"/>
+                                            <subviews>
+                                                <splitView arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-VN-d0a">
+                                                    <rect key="frame" x="15" y="25" width="1470" height="100"/>
+                                                    <subviews>
+                                                        <customView fixedFrame="YES" id="baz-Iv-VpC" customClass="MBTrackView" customModule="ECE485_final_project" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="1470" height="100"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <animations/>
+                                                        </customView>
+                                                    </subviews>
+                                                    <animations/>
+                                                    <holdingPriorities>
+                                                        <real value="250"/>
+                                                    </holdingPriorities>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="iKd-t9-XjI" id="NKE-Vc-adj"/>
+                                                    </connections>
+                                                </splitView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="0zZ-VN-d0a" secondAttribute="bottom" constant="25" id="M8g-f5-VLZ"/>
+                                                <constraint firstItem="0zZ-VN-d0a" firstAttribute="top" secondItem="HCJ-N7-pLt" secondAttribute="top" constant="26" id="V0m-O9-w9a"/>
+                                                <constraint firstAttribute="width" constant="1500" id="VGZ-p4-zTl"/>
+                                                <constraint firstAttribute="trailing" secondItem="0zZ-VN-d0a" secondAttribute="trailing" constant="15" id="dhQ-Xh-64c"/>
+                                                <constraint firstItem="0zZ-VN-d0a" firstAttribute="leading" secondItem="HCJ-N7-pLt" secondAttribute="leading" constant="15" id="ttv-I8-SkY"/>
+                                            </constraints>
+                                            <animations/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="HCJ-N7-pLt" firstAttribute="leading" secondItem="fXD-rH-86n" secondAttribute="leading" id="KxQ-4S-krP"/>
+                                        <constraint firstItem="HCJ-N7-pLt" firstAttribute="top" secondItem="fXD-rH-86n" secondAttribute="top" id="LN1-YG-cF2"/>
+                                        <constraint firstAttribute="bottom" secondItem="HCJ-N7-pLt" secondAttribute="bottom" id="d61-cX-BS3"/>
+                                    </constraints>
+                                    <animations/>
+                                    <color key="backgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="151" id="7e8-zf-MHN"/>
+                                </constraints>
+                                <animations/>
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="04D-cs-Ury">
+                                    <rect key="frame" x="0.0" y="135" width="800" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Bn5-9h-ZyQ">
+                                    <rect key="frame" x="784" y="0.0" width="16" height="151"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="0zZ-VN-d0a" firstAttribute="top" secondItem="hAu-9X-JUf" secondAttribute="bottom" constant="58" id="Fu6-y0-ASa"/>
-                            <constraint firstItem="0zZ-VN-d0a" firstAttribute="leading" secondItem="mrP-j4-kma" secondAttribute="leading" constant="50" id="GK2-KK-Nma"/>
+                            <constraint firstItem="ZXJ-QG-GWg" firstAttribute="top" secondItem="aoz-Lk-VG6" secondAttribute="bottom" constant="1" id="6dt-vp-s4w"/>
+                            <constraint firstItem="aoz-Lk-VG6" firstAttribute="top" secondItem="hAu-9X-JUf" secondAttribute="bottom" constant="8" id="ANX-XP-HuW"/>
+                            <constraint firstItem="aoz-Lk-VG6" firstAttribute="leading" secondItem="mrP-j4-kma" secondAttribute="leading" id="CgX-k6-KKa"/>
                             <constraint firstItem="hAu-9X-JUf" firstAttribute="top" secondItem="mrP-j4-kma" secondAttribute="top" constant="20" id="OR4-1N-adn"/>
-                            <constraint firstAttribute="trailing" secondItem="0zZ-VN-d0a" secondAttribute="trailing" constant="50" id="UWW-II-Bgo"/>
                             <constraint firstAttribute="trailing" secondItem="ZXJ-QG-GWg" secondAttribute="trailing" constant="50" id="cUC-4J-Plv"/>
                             <constraint firstItem="ZXJ-QG-GWg" firstAttribute="leading" secondItem="mrP-j4-kma" secondAttribute="leading" constant="50" id="dut-vu-aVb"/>
-                            <constraint firstItem="ZXJ-QG-GWg" firstAttribute="top" secondItem="0zZ-VN-d0a" secondAttribute="bottom" constant="2" id="glN-1S-ebC"/>
+                            <constraint firstAttribute="trailing" secondItem="aoz-Lk-VG6" secondAttribute="trailing" id="fGI-m2-bCC"/>
                             <constraint firstItem="hAu-9X-JUf" firstAttribute="leading" secondItem="mrP-j4-kma" secondAttribute="leading" constant="50" id="lpy-Fl-rIv"/>
                             <constraint firstAttribute="trailing" secondItem="hAu-9X-JUf" secondAttribute="trailing" constant="50" id="paS-Ls-JmY"/>
                         </constraints>
@@ -839,7 +879,8 @@
                     <connections>
                         <outlet property="initialTrackView" destination="baz-Iv-VpC" id="0NW-a9-cWj"/>
                         <outlet property="splitTrackView" destination="0zZ-VN-d0a" id="4KC-PU-ToX"/>
-                        <outlet property="splitTrackViewHeightConstraint" destination="wi8-z1-QuV" id="roO-Ta-bUJ"/>
+                        <outlet property="splitTrackViewHeightConstraint" destination="7e8-zf-MHN" id="N0W-Rs-MXB"/>
+                        <outlet property="splitTrackViewWidthConstraint" destination="VGZ-p4-zTl" id="WWn-O1-Viw"/>
                     </connections>
                 </viewController>
                 <customObject id="63k-Hu-yYx" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

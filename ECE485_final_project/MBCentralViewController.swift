@@ -16,6 +16,7 @@ class MBCentralViewController: NSViewController, MatlabEventDelegate, NSSplitVie
     let dataModel = MBDataModel.sharedInstance
     @IBOutlet var splitTrackView : NSSplitView?
     @IBOutlet var splitTrackViewHeightConstraint : NSLayoutConstraint?
+    @IBOutlet var splitTrackViewWidthConstraint : NSLayoutConstraint?
     @IBOutlet var initialTrackView : MBTrackView?
     
     var trackNumCount = 0
