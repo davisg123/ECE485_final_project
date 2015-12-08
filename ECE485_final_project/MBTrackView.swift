@@ -68,7 +68,7 @@ class MBTrackView: NSView, NSSplitViewDelegate, MBTrackHeaderViewClickDelegate {
     
     func setSelected(selected : Bool) {
         self.headerView?.setSelected(selected)
-        self.selected = true
+        self.selected = selected
         if (selected){
             self.layer?.borderColor = selectedBorderColor!.CGColor
         }
