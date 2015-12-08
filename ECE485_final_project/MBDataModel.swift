@@ -133,7 +133,7 @@ class MBDataModel : NSObject {
     //MARK: playing
     
     func playNoteMultiTrackArray(allNotes : [[MBNote]]){
-        //only supports two right now :-(
+        //only supports two right now 🙁
         var pass = 1
         for notes : [MBNote] in allNotes {
             var output : String = String(format:"a%d = [", pass)
@@ -147,7 +147,7 @@ class MBDataModel : NSObject {
             issueCommand(output)
             pass++
         }
-        //here lies the issue
+        //here lies the issue 🙁
         issueCommand("c=add_mismatch(a1,a2);\n")
         issueCommand("soundsc(c,8000);\n")
     }
