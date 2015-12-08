@@ -117,9 +117,8 @@ class MBTrackView: NSView, NSSplitViewDelegate, MBTrackHeaderViewClickDelegate {
     
     func splitView(splitView: NSSplitView, constrainSplitPosition proposedPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
         if (dividerIndex != 0){
-            //round to nearest 25
-            let proposedPositionInt = Int(proposedPosition)
-            let widthRounded = proposedPositionInt%50==0 ? proposedPositionInt : proposedPositionInt+50-(proposedPositionInt%50) + 24
+            //round to nearest 50
+            let widthRounded = 50 * Int(round(proposedPosition / 50.0))+24
             return CGFloat(widthRounded)
         }
         return proposedPosition

@@ -18,6 +18,8 @@ class MBNoteView: MBColorableView {
     
     var note : MBNote?
     
+    var widthLocked : Bool = false
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         sharedInit()
@@ -26,7 +28,14 @@ class MBNoteView: MBColorableView {
     init(frame frameRect: NSRect, note: MBNote) {
         self.note = note
         super.init(frame: frameRect)
-        sharedInit()
+        widthLocked = true
+        self.performSelector("unlockWidth", withObject: nil, afterDelay: 0.5)
+        NSBundle.mainBundle().loadNibNamed("MBNoteView", owner: self, topLevelObjects: nil)
+        self.addSubview(self.view!)
+    }
+    
+    func unlockWidth(){
+        widthLocked = false
     }
     
     func sharedInit() {
@@ -38,9 +47,15 @@ class MBNoteView: MBColorableView {
     }
     
     override func setFrameSize(newSize: NSSize) {
-        //setLockingContentFrame(newSize)
+        var size = newSize
+        if (widthLocked){
+            size.width = self.frame.size.width
+        }
+        else{
+            size.width = newSize.width < 50 ? 50 : newSize.width
+        }
+        super.setFrameSize(size)
         setContentFrame()
-        super.setFrameSize(newSize)
     }
 
     override func drawRect(dirtyRect: NSRect) {
@@ -55,7 +70,8 @@ class MBNoteView: MBColorableView {
     }
     
     func setContentFrame(){
-        var durVal = Int(floor(self.frame.size.width / 50))
+        let widthRounded = 50 * Int(round(self.frame.size.width / 50.0))
+        var durVal = Int(widthRounded/50)
         durVal = durVal==0 ? 1 : durVal
         note?.duration = durVal
         noteDur?.stringValue = String(format: "%d", durVal)

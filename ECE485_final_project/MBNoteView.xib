@@ -21,11 +21,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="173" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="50" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JXO-uF-uV6">
-                    <rect key="frame" x="44" y="39" width="84" height="22"/>
+                    <rect key="frame" x="-17" y="39" width="84" height="22"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="RKH-mz-d4g"/>
                         <constraint firstAttribute="height" constant="22" id="bpf-Bg-tM6"/>
@@ -38,7 +38,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RbN-ZM-73x">
-                    <rect key="frame" x="61" y="14" width="52" height="17"/>
+                    <rect key="frame" x="-1" y="14" width="52" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="0p4-WU-U8t"/>
                         <constraint firstAttribute="width" constant="48" id="AiG-Mt-s5u"/>
@@ -51,7 +51,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QCF-5H-lTL">
-                    <rect key="frame" x="142" y="79" width="28" height="16"/>
+                    <rect key="frame" x="19" y="79" width="28" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="aZo-aW-U28"/>
                         <constraint firstAttribute="width" constant="24" id="vJ4-TL-NUH"/>
@@ -73,7 +73,7 @@
                 <constraint firstAttribute="bottom" secondItem="RbN-ZM-73x" secondAttribute="bottom" constant="14" id="jbQ-As-JMh"/>
             </constraints>
             <animations/>
-            <point key="canvasLocation" x="134.5" y="212"/>
+            <point key="canvasLocation" x="73" y="212"/>
         </customView>
     </objects>
 </document>

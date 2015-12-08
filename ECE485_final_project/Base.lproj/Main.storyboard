@@ -870,7 +870,7 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jvM-ea-9WO" customClass="MBColorableView" customModule="ECE485_final_project" customModuleProvider="target">
-                                <rect key="frame" x="126" y="78" width="199" height="144"/>
+                                <rect key="frame" x="126" y="56" width="199" height="144"/>
                                 <subviews>
                                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s84-gZ-Cv0" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
                                         <rect key="frame" x="3" y="4" width="25" height="146"/>
@@ -950,11 +950,27 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </customView>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cVE-G2-nbi">
+                                <rect key="frame" x="163" y="217" width="126" height="26"/>
+                                <animations/>
+                                <popUpButtonCell key="cell" type="push" title="Square" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="f5z-uz-f1G" id="Qaw-Ra-XA1">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="kXM-Db-s8N">
+                                        <items>
+                                            <menuItem title="Square" state="on" id="f5z-uz-f1G"/>
+                                            <menuItem title="Triangle" id="91w-Cf-VIZ"/>
+                                            <menuItem title="Flute" id="Fe1-YG-ePi"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
                         </subviews>
                         <animations/>
                     </view>
                     <connections>
                         <outlet property="octaveSelector" destination="jfl-KK-tIt" id="xth-Wb-ApI"/>
+                        <outlet property="typeSelector" destination="cVE-G2-nbi" id="sNI-y6-pqU"/>
                     </connections>
                 </viewController>
                 <customObject id="DSS-m9-smN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

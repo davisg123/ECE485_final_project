@@ -82,9 +82,6 @@ class MBCentralViewController: NSViewController, MatlabEventDelegate, NSSplitVie
                 }
                 for i in 0...noteArrays.count - 1 {
                     let noteArray = noteArrays[i]
-                    for note in noteArray{
-                        
-                    }
                     let subview = self.splitTrackView?.subviews[i] as! MBTrackView
                     subview.rebuildWithNotes(noteArray)
                 }

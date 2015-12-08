@@ -17,6 +17,7 @@ class MBNoteSelectorViewController: NSViewController,MBPianoKeyMouseDelegate {
     @IBOutlet var delegate : MBNoteSelectorDelegate?
     
     @IBOutlet var octaveSelector : NSPopUpButton!
+    @IBOutlet var typeSelector : NSPopUpButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class MBNoteSelectorViewController: NSViewController,MBPianoKeyMouseDelegate {
     
     func mouseClickedKey(sender:MBPianoKey) {
         let octaveChar = octaveSelector.titleOfSelectedItem?.characters.last
-        let note = MBNote(noteLetter: sender.note!, octave: String(octaveChar!))
+        let note = MBNote(noteLetter: sender.note!, octave: String(octaveChar!), type: typeSelector.titleOfSelectedItem!.lowercaseString)
         delegate?.didSelectNote(note)
         self.dismissViewController(self)
     }

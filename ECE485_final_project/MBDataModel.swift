@@ -112,7 +112,7 @@ class MBDataModel : NSObject {
         //[dtfs_wave(F,L,Fs,W),...]
         var output : String = "a = ["
         for note : MBNote in notes {
-            output.appendContentsOf(makeDtfsWaveFunc(note))
+            output.appendContentsOf(makeWaveFunc(note))
             if (notes.last != note){
                 output.appendContentsOf(",")
             }
@@ -122,9 +122,23 @@ class MBDataModel : NSObject {
         issueCommand("soundsc(a,8000);\n")
     }
     
+    func makeWaveFunc(note : MBNote) -> String{
+        if (note.type == "flute"){
+            return makeAdsrWaveFunc(note)
+        }
+        else{
+            return makeDtfsWaveFunc(note)
+        }
+    }
+    
     func makeDtfsWaveFunc(note : MBNote) -> String{
         //dtfs_wave(F,L,Fs,W)
-        return String(format: "dtfs_wave(%@,%f,%d,%@)", makeNoteFreqFunc(note),note.secondDuration(),8000,"'Square'")
+        return String(format: "dtfs_wave(%@,%f,%d,'%@')", makeNoteFreqFunc(note),note.secondDuration(),8000,note.type)
+    }
+    
+    func makeAdsrWaveFunc(note : MBNote) -> String{
+        //adsr_wave(F,L,Fs)
+        return String(format: "adsr_wave(%@,%f,%d)", makeNoteFreqFunc(note),note.secondDuration(),8000)
     }
     
     func makeNoteFreqFunc(note : MBNote) -> String{
