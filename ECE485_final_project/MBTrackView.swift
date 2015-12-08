@@ -90,6 +90,11 @@ class MBTrackView: NSView, NSSplitViewDelegate, MBTrackHeaderViewClickDelegate {
     }
     
     func rebuildWithNotes(notes: [MBNote]){
+        for view in splitView!.subviews{
+            if view.isKindOfClass(MBNoteView){
+                view.removeFromSuperview()
+            }
+        }
         for note in notes{
             let noteView = MBNoteView(frame: NSRect(x: 0, y: 0, width: 50*note.duration, height: 70),note: note)
             splitView?.insertArrangedSubview(noteView, atIndex: splitView!.subviews.count-1)

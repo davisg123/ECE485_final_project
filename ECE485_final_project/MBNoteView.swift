@@ -35,7 +35,7 @@ class MBNoteView: MBColorableView {
     }
     
     func unlockWidth(){
-       // widthLocked = false
+       widthLocked = false
     }
     
     func sharedInit() {
