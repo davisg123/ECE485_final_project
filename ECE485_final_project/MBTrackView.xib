@@ -116,11 +116,5 @@
             <animations/>
             <point key="canvasLocation" x="320" y="255"/>
         </customView>
-        <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" id="thm-9W-Cbm">
-            <rect key="frame" x="0.0" y="0.0" width="18" height="20"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <animations/>
-            <sliderCell key="cell" controlSize="small" alignment="left" maxValue="100" allowsTickMarkValuesOnly="YES" sliderType="circular" id="csZ-JD-eLZ"/>
-        </slider>
     </objects>
 </document>

@@ -23,13 +23,21 @@ class MBNoteSelectorViewController: NSViewController,MBPianoKeyMouseDelegate {
         super.viewDidLoad()
         octaveSelector.removeAllItems()
         octaveSelector.addItemsWithTitles(["Octave 2","Octave 3","Octave 4","Octave 5","Octave 6","Octave 7","Octave 8"])
-        octaveSelector.selectItemAtIndex(1)
+        if (NSUserDefaults.standardUserDefaults().objectForKey("type") != nil){
+            octaveSelector.selectItemAtIndex(NSUserDefaults.standardUserDefaults().objectForKey("octave") as! Int)
+            typeSelector.selectItemAtIndex(NSUserDefaults.standardUserDefaults().objectForKey("type") as! Int)
+        }
+        else{
+            octaveSelector.selectItemAtIndex(1)
+        }
         // Do view setup here.
     }
     
     func mouseClickedKey(sender:MBPianoKey) {
         let octaveChar = octaveSelector.titleOfSelectedItem?.characters.last
         let note = MBNote(noteLetter: sender.note!, octave: String(octaveChar!), type: typeSelector.titleOfSelectedItem!.lowercaseString)
+        NSUserDefaults.standardUserDefaults().setValue(octaveSelector.indexOfSelectedItem, forKey: "octave")
+        NSUserDefaults.standardUserDefaults().setValue(typeSelector.indexOfSelectedItem, forKey: "type")
         delegate?.didSelectNote(note)
         self.dismissViewController(self)
     }
