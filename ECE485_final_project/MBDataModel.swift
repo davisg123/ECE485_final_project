@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cocoa
 
 protocol MatlabLoadDelegate{
     func matlabDidLoad()
@@ -22,7 +23,7 @@ class MBDataModel : NSObject {
     var matlabLoadDelegate:MatlabLoadDelegate?
     
     //TODO: search for matlab installation instead of static location
-    let MATLAB_PATH = "/Applications/MATLAB_R2015b.app/bin/matlab";
+    var MATLAB_PATH = "/Applications/MATLAB_R2015b.app/bin/matlab";
     let MATLAB_PARAMS = "-nodesktop";
     let READY_PROMPT = ">> "
     let MATLAB_FUNCTION_FOLDER = "Matlab Functions"
@@ -42,6 +43,28 @@ class MBDataModel : NSObject {
     
     override init(){
         super.init()
+        if NSFileManager.defaultManager().fileExistsAtPath(MATLAB_PATH){
+            executeTask()
+        }
+        else{
+            self.performSelector("delayedPrompt", withObject: nil, afterDelay: 0.5)
+        }
+    }
+    
+    func delayedPrompt(){
+        let openPanel = NSOpenPanel()
+        openPanel.directoryURL = NSURL.fileURLWithPath("/Applications")
+        openPanel.message = "Please locate your MATLAB installation"
+        openPanel.beginWithCompletionHandler { (result: Int) -> Void in
+            if result == NSFileHandlingPanelOKButton {
+                let openURL = openPanel.URL
+                self.MATLAB_PATH = openURL!.path!.stringByAppendingString("/bin/matlab")
+                self.executeTask()
+            }
+        }
+    }
+    
+    func executeTask(){
         task.launchPath = MATLAB_PATH
         task.arguments = [MATLAB_PARAMS]
         task.standardInput = inputPipe
@@ -103,6 +126,7 @@ class MBDataModel : NSObject {
     
     func setMatlabDirectory(){
         let path = NSBundle.mainBundle().pathForResource(MATLAB_FUNCTION_FOLDER, ofType: nil)
+        
         issueCommand(String(format: "cd('%@')\n", arguments: [path!]))
     }
     
