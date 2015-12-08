@@ -809,13 +809,13 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view translatesAutoresizingMaskIntoConstraints="NO" id="HCJ-N7-pLt">
-                                            <rect key="frame" x="0.0" y="0.0" width="1500" height="151"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="4000" height="151"/>
                                             <subviews>
                                                 <splitView arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-VN-d0a">
-                                                    <rect key="frame" x="15" y="25" width="1470" height="100"/>
+                                                    <rect key="frame" x="15" y="25" width="3970" height="100"/>
                                                     <subviews>
                                                         <customView fixedFrame="YES" id="baz-Iv-VpC" customClass="MBTrackView" customModule="ECE485_final_project" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="1470" height="100"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="3970" height="100"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <animations/>
                                                         </customView>
@@ -832,7 +832,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="0zZ-VN-d0a" secondAttribute="bottom" constant="25" id="M8g-f5-VLZ"/>
                                                 <constraint firstItem="0zZ-VN-d0a" firstAttribute="top" secondItem="HCJ-N7-pLt" secondAttribute="top" constant="26" id="V0m-O9-w9a"/>
-                                                <constraint firstAttribute="width" constant="1500" id="VGZ-p4-zTl"/>
+                                                <constraint firstAttribute="width" constant="4000" id="VGZ-p4-zTl"/>
                                                 <constraint firstAttribute="trailing" secondItem="0zZ-VN-d0a" secondAttribute="trailing" constant="15" id="dhQ-Xh-64c"/>
                                                 <constraint firstItem="0zZ-VN-d0a" firstAttribute="leading" secondItem="HCJ-N7-pLt" secondAttribute="leading" constant="15" id="ttv-I8-SkY"/>
                                             </constraints>

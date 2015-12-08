@@ -82,12 +82,22 @@ class MBTrackView: NSView, NSSplitViewDelegate, MBTrackHeaderViewClickDelegate {
     func addNoteBlock(note: MBNote){
         let noteView = MBNoteView(frame: NSRect(x: 0, y: 0, width: 50, height: 70),note: note)
         splitView?.insertArrangedSubview(noteView, atIndex: splitView!.subviews.count-1)
+        splitView?.setHoldingPriority(NSLayoutPriorityDefaultHigh, forSubviewAtIndex: splitView!.subviews.count-1)
+        if (splitView!.subviews.count-3 > 0){
+            let noteViewForLocking = splitView!.subviews[splitView!.subviews.count-2] as! MBNoteView
+            noteViewForLocking.widthLocked = true
+        }
     }
     
     func rebuildWithNotes(notes: [MBNote]){
         for note in notes{
             let noteView = MBNoteView(frame: NSRect(x: 0, y: 0, width: 50*note.duration, height: 70),note: note)
             splitView?.insertArrangedSubview(noteView, atIndex: splitView!.subviews.count-1)
+            splitView?.setHoldingPriority(NSLayoutPriorityDefaultHigh, forSubviewAtIndex: splitView!.subviews.count-1)
+            if (splitView!.subviews.count-3 > 0){
+                let noteViewForLocking = splitView!.subviews[splitView!.subviews.count-2] as! MBNoteView
+                noteViewForLocking.widthLocked = true
+            }
             noteView.updateContent()
         }
     }
