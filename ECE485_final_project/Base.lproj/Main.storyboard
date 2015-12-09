@@ -927,7 +927,7 @@
         <!--Delegate-->
         <scene sceneID="lg3-SE-1Rp">
             <objects>
-                <viewController id="Fjy-Vq-9C8" customClass="MBNoteSelectorViewController" customModule="ECE485_final_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Note Selector" id="Fjy-Vq-9C8" customClass="MBNoteSelectorViewController" customModule="ECE485_final_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Zch-s5-sfz">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
