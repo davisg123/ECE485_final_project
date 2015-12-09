@@ -132,9 +132,9 @@ class MBDataModel : NSObject {
     
     //MARK: playing
     
-    func playNoteMultiTrackArray(allNotes : [[MBNote]]){
+    func playNoteMultiTrackArray(allNotes : [[MBNote]], amplitudes : [Float]){
         if (allNotes.count == 1){
-            playNoteArray(allNotes.first!)
+            playNoteArray(allNotes.first!, amplitude: amplitudes.first!)
         }
         else{
             //only supports two right now 🙁
@@ -142,7 +142,7 @@ class MBDataModel : NSObject {
             for notes : [MBNote] in allNotes {
                 var output : String = String(format:"a%d = [", pass)
                 for note : MBNote in notes {
-                    output.appendContentsOf(makeWaveFunc(note))
+                    output.appendContentsOf(makeWaveFunc(note, amplitude: amplitudes[pass-1]))
                     if (notes.last != note){
                         output.appendContentsOf(",")
                     }
@@ -159,11 +159,11 @@ class MBDataModel : NSObject {
 
     }
     
-    func playNoteArray(notes : [MBNote]){
+    func playNoteArray(notes : [MBNote], amplitude : Float){
         //[dtfs_wave(F,L,Fs,W),...]
         var output : String = "a = ["
         for note : MBNote in notes {
-            output.appendContentsOf(makeWaveFunc(note))
+            output.appendContentsOf(makeWaveFunc(note, amplitude: amplitude))
             if (notes.last != note){
                 output.appendContentsOf(",")
             }
@@ -173,23 +173,23 @@ class MBDataModel : NSObject {
         issueCommand("b = audioplayer(x,8000); play(b);\n")
     }
     
-    func makeWaveFunc(note : MBNote) -> String{
+    func makeWaveFunc(note : MBNote, amplitude : Float) -> String{
         if (note.type == "flute"){
-            return makeAdsrWaveFunc(note)
+            return makeAdsrWaveFunc(note, amplitude: amplitude)
         }
         else{
-            return makeDtfsWaveFunc(note)
+            return makeDtfsWaveFunc(note, amplitude: amplitude)
         }
     }
     
-    func makeDtfsWaveFunc(note : MBNote) -> String{
+    func makeDtfsWaveFunc(note : MBNote, amplitude : Float) -> String{
         //dtfs_wave(F,L,Fs,W)
-        return String(format: "dtfs_wave(%@,%f,%d,'%@')", makeNoteFreqFunc(note),note.secondDuration(),8000,note.type)
+        return String(format: "dtfs_wave(%@,%f,%d,'%@',%f)", makeNoteFreqFunc(note),note.secondDuration(),8000,note.type,amplitude)
     }
     
-    func makeAdsrWaveFunc(note : MBNote) -> String{
+    func makeAdsrWaveFunc(note : MBNote, amplitude : Float) -> String{
         //adsr_wave(F,L,Fs)
-        return String(format: "adsr_wave(%@,%f,%d)", makeNoteFreqFunc(note),note.secondDuration(),8000)
+        return String(format: "adsr_wave(%@,%f,%d,%f)", makeNoteFreqFunc(note),note.secondDuration(),8000,amplitude)
     }
     
     func makeNoteFreqFunc(note : MBNote) -> String{

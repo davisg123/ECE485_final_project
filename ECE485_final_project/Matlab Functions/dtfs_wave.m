@@ -1,4 +1,4 @@
-function [y] = dtfs_wave(F,L,Fs,w)
+function [y] = dtfs_wave(F,L,Fs,w,A)
 
          
 n = 0:(L*Fs-1);
@@ -30,4 +30,4 @@ else
     end
 end
 
-y = real(x);
+y = A*real(x);
