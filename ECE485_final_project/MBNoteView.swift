@@ -63,11 +63,18 @@ class MBNoteView: MBColorableView {
         updateContent()
     }
     
+    override func rightMouseDown(theEvent: NSEvent) {
+        self.removeFromSuperview()
+    }
+    
+    
     func updateContent(){
         self.noteView?.stringValue = note!.noteLetter
         self.octaveView?.stringValue = String(format: "Octave %@", note!.octave)
         noteDur?.stringValue = String(format: "%d", note!.duration)
     }
+    
+
     
     func setContentFrame(){
         let widthRounded = 50 * Int(round(self.frame.size.width / 50.0))
@@ -78,5 +85,6 @@ class MBNoteView: MBColorableView {
         let contentFrame = NSMakeRect(0, 0, self.frame.size.width, self.frame.size.height)
         self.view!.frame = contentFrame
     }
+
     
 }
