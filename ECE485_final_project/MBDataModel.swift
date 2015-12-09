@@ -188,7 +188,7 @@ class MBDataModel : NSObject {
     
     func makeDtfsWaveFunc(note : MBNote, amplitude : Float) -> String{
         //dtfs_wave(F,L,Fs,W)
-        if(note.effect == "wah_wah" || note.effect == "flanger") {
+        if(note.effect == "wah_wah" || note.effect == "flanger" || note.effect == "overdrive" || note.effect == "fuzz") {
             return String(format: "\(note.effect)(dtfs_wave(%@,%f,%d,'%@',%f), 8000)", makeNoteFreqFunc(note),note.secondDuration(),8000,note.type,amplitude)
         } else if(note.effect == "vibrato") {
             return String(format: "\(note.effect)(dtfs_wave(%@,%f,%d,'%@',%f), 8000,2,1)", makeNoteFreqFunc(note),note.secondDuration(),8000,note.type,amplitude)
@@ -200,7 +200,7 @@ class MBDataModel : NSObject {
     
     func makeAdsrWaveFunc(note : MBNote, amplitude : Float) -> String{
         //adsr_wave(F,L,Fs)
-        if(note.effect == "wah_wah" || note.effect == "flanger") {
+        if(note.effect == "wah_wah" || note.effect == "flanger" || note.effect == "overdrive" || note.effect == "fuzz") {
             return String(format: "\(note.effect)(adsr_wave(%@,%f,%d,%f), 8000)", makeNoteFreqFunc(note),note.secondDuration(),8000,amplitude)
         } else if (note.effect == "vibrato") {
             return String(format: "\(note.effect)(adsr_wave(%@,%f,%d,%f), 8000,2,1)", makeNoteFreqFunc(note),note.secondDuration(),8000,amplitude)
