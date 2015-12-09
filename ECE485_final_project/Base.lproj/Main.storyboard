@@ -711,10 +711,15 @@
         <scene sceneID="Tyk-Ce-WNp">
             <objects>
                 <viewController id="iKd-t9-XjI" customClass="MBCentralViewController" customModule="ECE485_final_project" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="mrP-j4-kma">
+                    <view key="view" id="mrP-j4-kma" customClass="MBColorableView" customModule="ECE485_final_project" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dsv-X6-61h" customClass="MBImageView_Alpha" customModule="ECE485_final_project" customModuleProvider="target">
+                                <rect key="frame" x="350" y="150" width="512" height="512"/>
+                                <animations/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="musical-notes" id="1Yn-Wq-YBY"/>
+                            </imageView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="ZXJ-QG-GWg">
                                 <rect key="frame" x="50" y="350" width="700" height="35"/>
                                 <subviews>
@@ -825,7 +830,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="800" height="151"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <view misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HCJ-N7-pLt">
+                                        <view translatesAutoresizingMaskIntoConstraints="NO" id="HCJ-N7-pLt">
                                             <rect key="frame" x="0.0" y="0.0" width="4000" height="151"/>
                                             <subviews>
                                                 <splitView arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-VN-d0a">
@@ -868,13 +873,13 @@
                                     <constraint firstAttribute="height" constant="151" id="7e8-zf-MHN"/>
                                 </constraints>
                                 <animations/>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.00015624999999999271" horizontal="YES" id="04D-cs-Ury">
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="04D-cs-Ury">
                                     <rect key="frame" x="0.0" y="135" width="800" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Bn5-9h-ZyQ">
-                                    <rect key="frame" x="785" y="0.0" width="15" height="151"/>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="Bn5-9h-ZyQ">
+                                    <rect key="frame" x="784" y="0.0" width="16" height="151"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
@@ -892,6 +897,11 @@
                             <constraint firstAttribute="trailing" secondItem="hAu-9X-JUf" secondAttribute="trailing" constant="50" id="paS-Ls-JmY"/>
                         </constraints>
                         <animations/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                <color key="value" red="0.97041076421737671" green="0.88475543260574341" blue="0.95043462514877319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="initialTrackView" destination="baz-Iv-VpC" id="0NW-a9-cWj"/>
@@ -1122,5 +1132,6 @@
     </scenes>
     <resources>
         <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="musical-notes" width="512" height="512"/>
     </resources>
 </document>
