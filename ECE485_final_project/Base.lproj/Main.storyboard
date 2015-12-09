@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C47a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -887,13 +887,13 @@
                                     <constraint firstAttribute="height" constant="151" id="7e8-zf-MHN"/>
                                 </constraints>
                                 <animations/>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="04D-cs-Ury">
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.00062500000000000066" horizontal="YES" id="04D-cs-Ury">
                                     <rect key="frame" x="0.0" y="135" width="800" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="Bn5-9h-ZyQ">
-                                    <rect key="frame" x="784" y="0.0" width="16" height="151"/>
+                                    <rect key="frame" x="785" y="0.0" width="15" height="151"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
@@ -935,12 +935,12 @@
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfl-KK-tIt">
                                 <rect key="frame" x="163" y="256" width="126" height="26"/>
                                 <animations/>
-                                <popUpButtonCell key="cell" type="push" title="Octave 3" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="DdW-0c-dg6" id="kgd-gG-h8i">
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="kgd-gG-h8i">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="ewZ-SL-dFm">
                                         <items>
-                                            <menuItem title="Octave 3" state="on" id="DdW-0c-dg6"/>
+                                            <menuItem title="Octave 3" id="DdW-0c-dg6"/>
                                             <menuItem title="Item 2" id="b43-sz-Oqk"/>
                                             <menuItem title="Item 3" id="huv-JY-e9J"/>
                                         </items>
@@ -1115,14 +1115,30 @@
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cVE-G2-nbi">
                                 <rect key="frame" x="163" y="217" width="126" height="26"/>
                                 <animations/>
-                                <popUpButtonCell key="cell" type="push" title="Square" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="f5z-uz-f1G" id="Qaw-Ra-XA1">
+                                <popUpButtonCell key="cell" type="push" title="Flute" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Fe1-YG-ePi" id="Qaw-Ra-XA1">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="kXM-Db-s8N">
                                         <items>
-                                            <menuItem title="Square" state="on" id="f5z-uz-f1G"/>
+                                            <menuItem title="Square" id="f5z-uz-f1G"/>
                                             <menuItem title="Triangle" id="91w-Cf-VIZ"/>
-                                            <menuItem title="Flute" id="Fe1-YG-ePi"/>
+                                            <menuItem title="Flute" state="on" id="Fe1-YG-ePi"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gTh-BY-AaR">
+                                <rect key="frame" x="343" y="217" width="101" height="26"/>
+                                <animations/>
+                                <popUpButtonCell key="cell" type="push" title="vibrato" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="pUP-WR-Mie" id="A4k-i7-7bP">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="Xqy-Rw-fiq">
+                                        <items>
+                                            <menuItem title="No Effects" id="Oof-q0-gS4"/>
+                                            <menuItem title="flanger" id="uiB-Lk-nSf"/>
+                                            <menuItem title="wah_wah" id="8P7-JV-2xs"/>
+                                            <menuItem title="vibrato" state="on" id="pUP-WR-Mie"/>
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
@@ -1131,6 +1147,7 @@
                         <animations/>
                     </view>
                     <connections>
+                        <outlet property="effectSelector" destination="gTh-BY-AaR" id="eGQ-oW-6qo"/>
                         <outlet property="octaveSelector" destination="jfl-KK-tIt" id="xth-Wb-ApI"/>
                         <outlet property="typeSelector" destination="cVE-G2-nbi" id="sNI-y6-pqU"/>
                     </connections>

@@ -18,6 +18,7 @@ class MBNoteSelectorViewController: NSViewController,MBPianoKeyMouseDelegate, MB
     
     @IBOutlet var octaveSelector : NSPopUpButton!
     @IBOutlet var typeSelector : NSPopUpButton!
+    @IBOutlet var effectSelector: NSPopUpButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,17 +36,19 @@ class MBNoteSelectorViewController: NSViewController,MBPianoKeyMouseDelegate, MB
     
     func mouseClickedKey(sender:MBPianoKey) {
         let octaveChar = octaveSelector.titleOfSelectedItem?.characters.last
-        let note = MBNote(noteLetter: sender.note!, octave: String(octaveChar!), type: typeSelector.titleOfSelectedItem!.lowercaseString)
+        let note = MBNote(noteLetter: sender.note!, octave: String(octaveChar!), type: typeSelector.titleOfSelectedItem!.lowercaseString, effect: effectSelector.titleOfSelectedItem!)
         NSUserDefaults.standardUserDefaults().setValue(octaveSelector.indexOfSelectedItem, forKey: "octave")
         NSUserDefaults.standardUserDefaults().setValue(typeSelector.indexOfSelectedItem, forKey: "type")
+        NSUserDefaults.standardUserDefaults().setValue(effectSelector.indexOfSelectedItem, forKey: "effect")
         delegate?.didSelectNote(note)
     }
     
     func mouseClickedBlackKey(sender: MBBlackPianoKey) {
         let octaveChar = octaveSelector.titleOfSelectedItem?.characters.last
-        let note = MBNote(noteLetter: sender.note!, octave: String(octaveChar!), type: typeSelector.titleOfSelectedItem!.lowercaseString)
+        let note = MBNote(noteLetter: sender.note!, octave: String(octaveChar!), type: typeSelector.titleOfSelectedItem!.lowercaseString, effect: effectSelector.titleOfSelectedItem!)
         NSUserDefaults.standardUserDefaults().setValue(octaveSelector.indexOfSelectedItem, forKey: "octave")
         NSUserDefaults.standardUserDefaults().setValue(typeSelector.indexOfSelectedItem, forKey: "type")
+        NSUserDefaults.standardUserDefaults().setValue(effectSelector.indexOfSelectedItem, forKey: "effect")
         delegate?.didSelectNote(note)
     }
     
