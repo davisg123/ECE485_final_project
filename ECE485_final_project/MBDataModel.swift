@@ -170,7 +170,7 @@ class MBDataModel : NSObject {
         }
         output.appendContentsOf("];\n")
         issueCommand(output)
-        issueCommand("b = audioplayer(a,8000); play(b);\n")
+        issueCommand("b = audioplayer(x,8000); play(b);\n")
     }
     
     func makeWaveFunc(note : MBNote) -> String{

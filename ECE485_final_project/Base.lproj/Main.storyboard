@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C47a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -825,7 +825,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="800" height="151"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <view misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HCJ-N7-pLt">
+                                        <view translatesAutoresizingMaskIntoConstraints="NO" id="HCJ-N7-pLt">
                                             <rect key="frame" x="0.0" y="0.0" width="4000" height="151"/>
                                             <subviews>
                                                 <splitView arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-VN-d0a">
@@ -868,13 +868,13 @@
                                     <constraint firstAttribute="height" constant="151" id="7e8-zf-MHN"/>
                                 </constraints>
                                 <animations/>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.00015624999999999271" horizontal="YES" id="04D-cs-Ury">
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.0012500000000000078" horizontal="YES" id="04D-cs-Ury">
                                     <rect key="frame" x="0.0" y="135" width="800" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Bn5-9h-ZyQ">
-                                    <rect key="frame" x="785" y="0.0" width="15" height="151"/>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="Bn5-9h-ZyQ">
+                                    <rect key="frame" x="784" y="0.0" width="16" height="151"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
@@ -1095,14 +1095,29 @@
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cVE-G2-nbi">
                                 <rect key="frame" x="163" y="217" width="126" height="26"/>
                                 <animations/>
-                                <popUpButtonCell key="cell" type="push" title="Square" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="f5z-uz-f1G" id="Qaw-Ra-XA1">
+                                <popUpButtonCell key="cell" type="push" title="Triangle" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="91w-Cf-VIZ" id="Qaw-Ra-XA1">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="kXM-Db-s8N">
                                         <items>
-                                            <menuItem title="Square" state="on" id="f5z-uz-f1G"/>
-                                            <menuItem title="Triangle" id="91w-Cf-VIZ"/>
+                                            <menuItem title="Square" id="f5z-uz-f1G"/>
+                                            <menuItem title="Triangle" state="on" id="91w-Cf-VIZ"/>
                                             <menuItem title="Flute" id="Fe1-YG-ePi"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gTh-BY-AaR">
+                                <rect key="frame" x="343" y="217" width="101" height="26"/>
+                                <animations/>
+                                <popUpButtonCell key="cell" type="push" title="No Effects" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Oof-q0-gS4" id="A4k-i7-7bP">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="Xqy-Rw-fiq">
+                                        <items>
+                                            <menuItem title="No Effects" state="on" id="Oof-q0-gS4"/>
+                                            <menuItem title="Wah Wah" id="8P7-JV-2xs"/>
+                                            <menuItem title="Phaser" id="pUP-WR-Mie"/>
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
@@ -1111,6 +1126,7 @@
                         <animations/>
                     </view>
                     <connections>
+                        <outlet property="effectSelector" destination="gTh-BY-AaR" id="eGQ-oW-6qo"/>
                         <outlet property="octaveSelector" destination="jfl-KK-tIt" id="xth-Wb-ApI"/>
                         <outlet property="typeSelector" destination="cVE-G2-nbi" id="sNI-y6-pqU"/>
                     </connections>

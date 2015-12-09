@@ -18,6 +18,7 @@ class MBNoteSelectorViewController: NSViewController,MBPianoKeyMouseDelegate, MB
     
     @IBOutlet var octaveSelector : NSPopUpButton!
     @IBOutlet var typeSelector : NSPopUpButton!
+    @IBOutlet var effectSelector: NSPopUpButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
