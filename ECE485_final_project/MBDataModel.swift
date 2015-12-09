@@ -23,7 +23,8 @@ class MBDataModel : NSObject {
     var matlabLoadDelegate:MatlabLoadDelegate?
     
     //TODO: search for matlab installation instead of static location
-    var MATLAB_PATH = "/Applications/MATLAB_R2015a.app/bin/matlab";
+    let MATLAB_PATH = "/Applications/MATLAB_R2015a.app/bin/matlab";
+    let SECONDAY_MATLAB_PATH = "/Applications/MATLAB_R2015b.app/bin/matlab";
     let MATLAB_PARAMS = "-nodesktop";
     let READY_PROMPT = ">> "
     let MATLAB_FUNCTION_FOLDER = "Matlab Functions"
@@ -44,7 +45,10 @@ class MBDataModel : NSObject {
     override init(){
         super.init()
         if NSFileManager.defaultManager().fileExistsAtPath(MATLAB_PATH){
-            executeTask()
+            executeTask(MATLAB_PATH)
+        }
+        else if NSFileManager.defaultManager().fileExistsAtPath(SECONDAY_MATLAB_PATH){
+            executeTask(SECONDAY_MATLAB_PATH)
         }
         else{
             self.performSelector("delayedPrompt", withObject: nil, afterDelay: 0.5)
@@ -58,14 +62,14 @@ class MBDataModel : NSObject {
         openPanel.beginWithCompletionHandler { (result: Int) -> Void in
             if result == NSFileHandlingPanelOKButton {
                 let openURL = openPanel.URL
-                self.MATLAB_PATH = openURL!.path!.stringByAppendingString("/bin/matlab")
-                self.executeTask()
+                let newPath = openURL!.path!.stringByAppendingString("/bin/matlab")
+                self.executeTask(newPath)
             }
         }
     }
     
-    func executeTask(){
-        task.launchPath = MATLAB_PATH
+    func executeTask(path : String){
+        task.launchPath = path
         task.arguments = [MATLAB_PARAMS]
         task.standardInput = inputPipe
         taskInput = inputPipe.fileHandleForWriting

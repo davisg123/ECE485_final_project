@@ -32,6 +32,10 @@ class MBCentralViewController: NSViewController, MatlabEventDelegate, NSSplitVie
         // Do view setup here.
     }
     
+    override func viewDidAppear() {
+        self.performSegueWithIdentifier("toLoading", sender: self)
+    }
+    
     @IBAction func addNewTrack(sender: NSButton) {
         let newTrackView = MBTrackView(frame: NSRect(x: 0, y: 0, width: NEW_TRACK_WIDTH, height: NEW_TRACK_HEIGHT))
         newTrackView.delegate = self
@@ -119,8 +123,10 @@ class MBCentralViewController: NSViewController, MatlabEventDelegate, NSSplitVie
     //MARK: segue
     
     override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
-        let destination = segue.destinationController as! MBNoteSelectorViewController
-        destination.delegate = self
+        if (segue.destinationController.isKindOfClass(MBNoteSelectorViewController)){
+            let destination = segue.destinationController as! MBNoteSelectorViewController
+            destination.delegate = self
+        }
     }
     
     //MARK: MBNoteSelectorDelegate
