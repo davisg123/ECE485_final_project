@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		723481A81C17D23000CE37FB /* MBImageView+Alpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723481A71C17D23000CE37FB /* MBImageView+Alpha.swift */; };
 		723481AA1C17D65000CE37FB /* MBBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723481A91C17D65000CE37FB /* MBBackgroundView.swift */; };
+		723481AC1C17EBF200CE37FB /* MBTrackHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723481AB1C17EBF200CE37FB /* MBTrackHeaderView.swift */; };
 		7267B95B1C121C540029E125 /* MBTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7267B95A1C121C540029E125 /* MBTrackView.swift */; };
 		7267B95D1C121C630029E125 /* MBTrackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7267B95C1C121C630029E125 /* MBTrackView.xib */; };
 		729214581C14FDD20032F898 /* MBNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729214571C14FDD20032F898 /* MBNote.swift */; };
@@ -22,11 +23,8 @@
 		72A9F3021C0D2563008E7BCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9F3011C0D2563008E7BCF /* ViewController.swift */; };
 		72A9F3041C0D2563008E7BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72A9F3031C0D2563008E7BCF /* Assets.xcassets */; };
 		72A9F3071C0D2563008E7BCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72A9F3051C0D2563008E7BCF /* Main.storyboard */; };
-		72A9F3121C0D2563008E7BCF /* ECE485_final_projectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9F3111C0D2563008E7BCF /* ECE485_final_projectTests.swift */; };
-		72A9F31D1C0D2563008E7BCF /* ECE485_final_projectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9F31C1C0D2563008E7BCF /* ECE485_final_projectUITests.swift */; };
 		72A9F32E1C0D279B008E7BCF /* MBDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A9F32D1C0D279B008E7BCF /* MBDataModel.swift */; };
 		72A9F3331C0D4593008E7BCF /* Matlab Functions in Resources */ = {isa = PBXBuildFile; fileRef = 72A9F3321C0D4593008E7BCF /* Matlab Functions */; };
-		72F69E6C1C137C69002BA041 /* MBTrackHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F69E6B1C137C69002BA041 /* MBTrackHeaderView.swift */; };
 		72F69EA51C139E49002BA041 /* MBNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F69EA41C139E49002BA041 /* MBNoteView.swift */; };
 		72F69EA71C139E6A002BA041 /* MBNoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F69EA61C139E6A002BA041 /* MBNoteView.xib */; };
 /* End PBXBuildFile section */
@@ -51,6 +49,7 @@
 /* Begin PBXFileReference section */
 		723481A71C17D23000CE37FB /* MBImageView+Alpha.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MBImageView+Alpha.swift"; sourceTree = "<group>"; };
 		723481A91C17D65000CE37FB /* MBBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBBackgroundView.swift; sourceTree = "<group>"; };
+		723481AB1C17EBF200CE37FB /* MBTrackHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTrackHeaderView.swift; sourceTree = "<group>"; };
 		7267B95A1C121C540029E125 /* MBTrackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTrackView.swift; sourceTree = "<group>"; };
 		7267B95C1C121C630029E125 /* MBTrackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBTrackView.xib; sourceTree = "<group>"; };
 		729214571C14FDD20032F898 /* MBNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBNote.swift; sourceTree = "<group>"; };
@@ -67,14 +66,9 @@
 		72A9F3061C0D2563008E7BCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		72A9F3081C0D2563008E7BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72A9F30D1C0D2563008E7BCF /* ECE485_final_projectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECE485_final_projectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		72A9F3111C0D2563008E7BCF /* ECE485_final_projectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECE485_final_projectTests.swift; sourceTree = "<group>"; };
-		72A9F3131C0D2563008E7BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72A9F3181C0D2563008E7BCF /* ECE485_final_projectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECE485_final_projectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		72A9F31C1C0D2563008E7BCF /* ECE485_final_projectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECE485_final_projectUITests.swift; sourceTree = "<group>"; };
-		72A9F31E1C0D2563008E7BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72A9F32D1C0D279B008E7BCF /* MBDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBDataModel.swift; sourceTree = "<group>"; };
 		72A9F3321C0D4593008E7BCF /* Matlab Functions */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Matlab Functions"; path = "ECE485_final_project/Matlab Functions"; sourceTree = SOURCE_ROOT; };
-		72F69E6B1C137C69002BA041 /* MBTrackHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MBTrackHeaderView.swift; path = ../MBTrackHeaderView.swift; sourceTree = "<group>"; };
 		72F69EA41C139E49002BA041 /* MBNoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBNoteView.swift; sourceTree = "<group>"; };
 		72F69EA61C139E6A002BA041 /* MBNoteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBNoteView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,9 +119,9 @@
 		72A9851F1C11264300937E81 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				72F69E6B1C137C69002BA041 /* MBTrackHeaderView.swift */,
 				72A985241C1126F100937E81 /* MBPianoKey.swift */,
 				729ED8431C17B6E600D5D245 /* MBBlackPianoKey.swift */,
+				723481AB1C17EBF200CE37FB /* MBTrackHeaderView.swift */,
 				72A985281C1127E600937E81 /* MBColorableView.swift */,
 				723481A91C17D65000CE37FB /* MBBackgroundView.swift */,
 				7267B95A1C121C540029E125 /* MBTrackView.swift */,
@@ -143,8 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				72A9F2FE1C0D2563008E7BCF /* ECE485_final_project */,
-				72A9F3101C0D2563008E7BCF /* ECE485_final_projectTests */,
-				72A9F31B1C0D2563008E7BCF /* ECE485_final_projectUITests */,
 				72A9F2FD1C0D2563008E7BCF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -173,24 +165,6 @@
 				72A9F3081C0D2563008E7BCF /* Info.plist */,
 			);
 			path = ECE485_final_project;
-			sourceTree = "<group>";
-		};
-		72A9F3101C0D2563008E7BCF /* ECE485_final_projectTests */ = {
-			isa = PBXGroup;
-			children = (
-				72A9F3111C0D2563008E7BCF /* ECE485_final_projectTests.swift */,
-				72A9F3131C0D2563008E7BCF /* Info.plist */,
-			);
-			path = ECE485_final_projectTests;
-			sourceTree = "<group>";
-		};
-		72A9F31B1C0D2563008E7BCF /* ECE485_final_projectUITests */ = {
-			isa = PBXGroup;
-			children = (
-				72A9F31C1C0D2563008E7BCF /* ECE485_final_projectUITests.swift */,
-				72A9F31E1C0D2563008E7BCF /* Info.plist */,
-			);
-			path = ECE485_final_projectUITests;
 			sourceTree = "<group>";
 		};
 		72A9F32A1C0D2613008E7BCF /* Model */ = {
@@ -338,7 +312,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				729ED8441C17B6E600D5D245 /* MBBlackPianoKey.swift in Sources */,
-				72F69E6C1C137C69002BA041 /* MBTrackHeaderView.swift in Sources */,
 				72A9F3021C0D2563008E7BCF /* ViewController.swift in Sources */,
 				72A9F3001C0D2563008E7BCF /* AppDelegate.swift in Sources */,
 				72A9F32E1C0D279B008E7BCF /* MBDataModel.swift in Sources */,
@@ -346,6 +319,7 @@
 				72F69EA51C139E49002BA041 /* MBNoteView.swift in Sources */,
 				723481AA1C17D65000CE37FB /* MBBackgroundView.swift in Sources */,
 				723481A81C17D23000CE37FB /* MBImageView+Alpha.swift in Sources */,
+				723481AC1C17EBF200CE37FB /* MBTrackHeaderView.swift in Sources */,
 				72A9851E1C1125E900937E81 /* MBNoteSelectorViewController.swift in Sources */,
 				72A985251C1126F100937E81 /* MBPianoKey.swift in Sources */,
 				729214581C14FDD20032F898 /* MBNote.swift in Sources */,
@@ -358,7 +332,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72A9F3121C0D2563008E7BCF /* ECE485_final_projectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +339,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72A9F31D1C0D2563008E7BCF /* ECE485_final_projectUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
