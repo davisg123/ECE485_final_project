@@ -14,6 +14,13 @@ class MBNoteView: MBColorableView {
     @IBOutlet var noteView : NSTextField?
     @IBOutlet var octaveView : NSTextField?
     
+    //colors defined in IB (file's owner)
+    @IBOutlet var greenColor : NSColor?
+    @IBOutlet var orangeColor : NSColor?
+    @IBOutlet var redColor : NSColor?
+    @IBOutlet var turquoiseColor : NSColor?
+    @IBOutlet var asphaltColor : NSColor?
+    
     @IBOutlet var noteDur : NSTextField?
     
     var note : MBNote?
@@ -32,6 +39,22 @@ class MBNoteView: MBColorableView {
         self.performSelector("unlockWidth", withObject: nil, afterDelay: 0.1)
         NSBundle.mainBundle().loadNibNamed("MBNoteView", owner: self, topLevelObjects: nil)
         self.addSubview(self.view!)
+        if note.effect == "flanger"{
+            self.color = greenColor
+        }
+        else if note.effect == "wah_wah"{
+            self.color = orangeColor
+        }
+        else if note.effect == "vibrato"{
+            self.color = redColor
+        }
+        else if note.effect == "overdrive"{
+            self.color = turquoiseColor
+        }
+        else if note.effect == "fuzz"{
+            self.color = asphaltColor
+        }
+        
     }
     
     func unlockWidth(){

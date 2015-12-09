@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C47a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -844,10 +844,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="800" height="151"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <view translatesAutoresizingMaskIntoConstraints="NO" id="HCJ-N7-pLt">
+                                        <view misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HCJ-N7-pLt">
                                             <rect key="frame" x="0.0" y="0.0" width="4000" height="151"/>
                                             <subviews>
-                                                <splitView arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-VN-d0a">
+                                                <splitView misplaced="YES" arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-VN-d0a">
                                                     <rect key="frame" x="15" y="25" width="3970" height="100"/>
                                                     <subviews>
                                                         <customView fixedFrame="YES" id="baz-Iv-VpC" customClass="MBTrackView" customModule="ECE485_final_project" customModuleProvider="target">
@@ -887,13 +887,13 @@
                                     <constraint firstAttribute="height" constant="151" id="7e8-zf-MHN"/>
                                 </constraints>
                                 <animations/>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.00062499999999999925" horizontal="YES" id="04D-cs-Ury">
-                                    <rect key="frame" x="0.0" y="135" width="800" height="16"/>
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="04D-cs-Ury">
+                                    <rect key="frame" x="0.0" y="136" width="785" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="Bn5-9h-ZyQ">
-                                    <rect key="frame" x="785" y="0.0" width="15" height="151"/>
+                                    <rect key="frame" x="785" y="0.0" width="15" height="136"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
