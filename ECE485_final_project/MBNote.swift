@@ -13,12 +13,14 @@ class MBNote: NSObject {
     var octave : String!
     var duration : Int!
     var type : String!
+    var effect: String!
     
-    required init(noteLetter : String, octave : String, type : String){
+    required init(noteLetter : String, octave : String, type : String, effect: String){
         self.noteLetter = noteLetter
         self.octave = octave
         self.duration = 1
         self.type = type
+        self.effect = effect
         super.init()
     }
     
@@ -28,6 +30,7 @@ class MBNote: NSObject {
         octave = aDecoder.decodeObjectForKey("octave") as! String
         duration = aDecoder.decodeObjectForKey("duration") as! Int
         type = aDecoder.decodeObjectForKey("type") as! String
+        effect = aDecoder.decodeObjectForKey("effect") as! String
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
@@ -35,6 +38,7 @@ class MBNote: NSObject {
         aCoder.encodeObject(octave, forKey: "octave")
         aCoder.encodeObject(duration, forKey: "duration")
         aCoder.encodeObject(type, forKey: "type")
+        aCoder.encodeObject(effect, forKey: "effect")
     }
     
     func toString() -> String{

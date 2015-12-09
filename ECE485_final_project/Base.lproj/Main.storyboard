@@ -1110,13 +1110,13 @@
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gTh-BY-AaR">
                                 <rect key="frame" x="343" y="217" width="101" height="26"/>
                                 <animations/>
-                                <popUpButtonCell key="cell" type="push" title="No Effects" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Oof-q0-gS4" id="A4k-i7-7bP">
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="A4k-i7-7bP">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="Xqy-Rw-fiq">
                                         <items>
-                                            <menuItem title="No Effects" state="on" id="Oof-q0-gS4"/>
-                                            <menuItem title="Wah Wah" id="8P7-JV-2xs"/>
+                                            <menuItem title="No Effects" id="Oof-q0-gS4"/>
+                                            <menuItem title="wah_wah" id="8P7-JV-2xs"/>
                                             <menuItem title="Phaser" id="pUP-WR-Mie"/>
                                         </items>
                                     </menu>
