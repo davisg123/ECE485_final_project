@@ -30,7 +30,7 @@ class ViewController: NSViewController, MatlabLoadDelegate {
     
     func matlabDidLoad() {
         matlabInitView?.hidden = true
-        self.performSegueWithIdentifier("toMain", sender: self)
+        self.dismissViewController(self)
     }
 
 }

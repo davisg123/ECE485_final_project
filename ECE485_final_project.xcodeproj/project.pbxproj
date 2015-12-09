@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		723481A81C17D23000CE37FB /* MBImageView+Alpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723481A71C17D23000CE37FB /* MBImageView+Alpha.swift */; };
+		723481AA1C17D65000CE37FB /* MBBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723481A91C17D65000CE37FB /* MBBackgroundView.swift */; };
 		7267B95B1C121C540029E125 /* MBTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7267B95A1C121C540029E125 /* MBTrackView.swift */; };
 		7267B95D1C121C630029E125 /* MBTrackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7267B95C1C121C630029E125 /* MBTrackView.xib */; };
 		729214581C14FDD20032F898 /* MBNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729214571C14FDD20032F898 /* MBNote.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		723481A71C17D23000CE37FB /* MBImageView+Alpha.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MBImageView+Alpha.swift"; sourceTree = "<group>"; };
+		723481A91C17D65000CE37FB /* MBBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBBackgroundView.swift; sourceTree = "<group>"; };
 		7267B95A1C121C540029E125 /* MBTrackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTrackView.swift; sourceTree = "<group>"; };
 		7267B95C1C121C630029E125 /* MBTrackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBTrackView.xib; sourceTree = "<group>"; };
 		729214571C14FDD20032F898 /* MBNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBNote.swift; sourceTree = "<group>"; };
@@ -125,10 +129,12 @@
 				72A985241C1126F100937E81 /* MBPianoKey.swift */,
 				729ED8431C17B6E600D5D245 /* MBBlackPianoKey.swift */,
 				72A985281C1127E600937E81 /* MBColorableView.swift */,
+				723481A91C17D65000CE37FB /* MBBackgroundView.swift */,
 				7267B95A1C121C540029E125 /* MBTrackView.swift */,
 				7267B95C1C121C630029E125 /* MBTrackView.xib */,
 				72F69EA41C139E49002BA041 /* MBNoteView.swift */,
 				72F69EA61C139E6A002BA041 /* MBNoteView.xib */,
+				723481A71C17D23000CE37FB /* MBImageView+Alpha.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -338,6 +344,8 @@
 				72A9F32E1C0D279B008E7BCF /* MBDataModel.swift in Sources */,
 				7267B95B1C121C540029E125 /* MBTrackView.swift in Sources */,
 				72F69EA51C139E49002BA041 /* MBNoteView.swift in Sources */,
+				723481AA1C17D65000CE37FB /* MBBackgroundView.swift in Sources */,
+				723481A81C17D23000CE37FB /* MBImageView+Alpha.swift in Sources */,
 				72A9851E1C1125E900937E81 /* MBNoteSelectorViewController.swift in Sources */,
 				72A985251C1126F100937E81 /* MBPianoKey.swift in Sources */,
 				729214581C14FDD20032F898 /* MBNote.swift in Sources */,

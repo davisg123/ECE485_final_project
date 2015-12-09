@@ -660,7 +660,7 @@
                         <value key="maxSize" type="size" width="800" height="600"/>
                     </window>
                     <connections>
-                        <segue destination="r9S-m0-Lva" kind="relationship" relationship="window.shadowedContentViewController" id="gje-et-cOj"/>
+                        <segue destination="iKd-t9-XjI" kind="relationship" relationship="window.shadowedContentViewController" id="5tD-tQ-2XH"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -700,12 +700,11 @@
                     <connections>
                         <outlet property="matlabInitProgressIndicator" destination="s4q-mQ-sZN" id="kAz-iW-ZH6"/>
                         <outlet property="matlabInitView" destination="VdB-un-zz4" id="n9l-o5-Eat"/>
-                        <segue destination="iKd-t9-XjI" kind="sheet" identifier="toMain" id="g8A-Hh-KCj"/>
                     </connections>
                 </viewController>
                 <customObject id="hHC-R4-dYa" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="973"/>
+            <point key="canvasLocation" x="177" y="1632"/>
         </scene>
         <!--Central View Controller-->
         <scene sceneID="Tyk-Ce-WNp">
@@ -715,6 +714,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <visualEffectView appearanceType="vibrantLight" fixedFrame="YES" blendingMode="behindWindow" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="CwI-Gh-BVj">
+                                <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                                <subviews>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gwk-tz-VLw" customClass="MBBackgroundView" customModule="ECE485_final_project" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                                        <animations/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="0.91270941495895386" green="0.52145063877105713" blue="0.76831454038619995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </customView>
+                                </subviews>
+                                <animations/>
+                            </visualEffectView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dsv-X6-61h" customClass="MBImageView_Alpha" customModule="ECE485_final_project" customModuleProvider="target">
+                                <rect key="frame" x="350" y="150" width="512" height="512"/>
+                                <animations/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="musical-notes" id="1Yn-Wq-YBY"/>
+                            </imageView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="ZXJ-QG-GWg">
                                 <rect key="frame" x="50" y="350" width="700" height="35"/>
                                 <subviews>
@@ -825,7 +844,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="800" height="151"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <view translatesAutoresizingMaskIntoConstraints="NO" id="HCJ-N7-pLt">
+                                        <view misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HCJ-N7-pLt">
                                             <rect key="frame" x="0.0" y="0.0" width="4000" height="151"/>
                                             <subviews>
                                                 <splitView arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-VN-d0a">
@@ -868,13 +887,13 @@
                                     <constraint firstAttribute="height" constant="151" id="7e8-zf-MHN"/>
                                 </constraints>
                                 <animations/>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.0012500000000000078" horizontal="YES" id="04D-cs-Ury">
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.00028215934849811826" horizontal="YES" id="04D-cs-Ury">
                                     <rect key="frame" x="0.0" y="135" width="800" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="Bn5-9h-ZyQ">
-                                    <rect key="frame" x="784" y="0.0" width="16" height="151"/>
+                                    <rect key="frame" x="785" y="0.0" width="15" height="151"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
@@ -898,11 +917,12 @@
                         <outlet property="splitTrackView" destination="0zZ-VN-d0a" id="4KC-PU-ToX"/>
                         <outlet property="splitTrackViewHeightConstraint" destination="7e8-zf-MHN" id="N0W-Rs-MXB"/>
                         <outlet property="splitTrackViewWidthConstraint" destination="VGZ-p4-zTl" id="WWn-O1-Viw"/>
+                        <segue destination="r9S-m0-Lva" kind="sheet" identifier="toLoading" id="oB4-mD-cCU"/>
                     </connections>
                 </viewController>
                 <customObject id="63k-Hu-yYx" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="125" y="1784"/>
+            <point key="canvasLocation" x="177" y="884"/>
         </scene>
         <!--Delegate-->
         <scene sceneID="lg3-SE-1Rp">
@@ -1133,10 +1153,11 @@
                 </viewController>
                 <customObject id="DSS-m9-smN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="907" y="1784"/>
+            <point key="canvasLocation" x="1034" y="884"/>
         </scene>
     </scenes>
     <resources>
         <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="musical-notes" width="512" height="512"/>
     </resources>
 </document>

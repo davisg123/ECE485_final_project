@@ -23,7 +23,8 @@ class MBDataModel : NSObject {
     var matlabLoadDelegate:MatlabLoadDelegate?
     
     //TODO: search for matlab installation instead of static location
-    var MATLAB_PATH = "/Applications/MATLAB_R2015a.app/bin/matlab";
+    let MATLAB_PATH = "/Applications/MATLAB_R2015a.app/bin/matlab";
+    let SECONDAY_MATLAB_PATH = "/Applications/MATLAB_R2015b.app/bin/matlab";
     let MATLAB_PARAMS = "-nodesktop";
     let READY_PROMPT = ">> "
     let MATLAB_FUNCTION_FOLDER = "Matlab Functions"
@@ -44,7 +45,10 @@ class MBDataModel : NSObject {
     override init(){
         super.init()
         if NSFileManager.defaultManager().fileExistsAtPath(MATLAB_PATH){
-            executeTask()
+            executeTask(MATLAB_PATH)
+        }
+        else if NSFileManager.defaultManager().fileExistsAtPath(SECONDAY_MATLAB_PATH){
+            executeTask(SECONDAY_MATLAB_PATH)
         }
         else{
             self.performSelector("delayedPrompt", withObject: nil, afterDelay: 0.5)
@@ -58,14 +62,14 @@ class MBDataModel : NSObject {
         openPanel.beginWithCompletionHandler { (result: Int) -> Void in
             if result == NSFileHandlingPanelOKButton {
                 let openURL = openPanel.URL
-                self.MATLAB_PATH = openURL!.path!.stringByAppendingString("/bin/matlab")
-                self.executeTask()
+                let newPath = openURL!.path!.stringByAppendingString("/bin/matlab")
+                self.executeTask(newPath)
             }
         }
     }
     
-    func executeTask(){
-        task.launchPath = MATLAB_PATH
+    func executeTask(path : String){
+        task.launchPath = path
         task.arguments = [MATLAB_PARAMS]
         task.standardInput = inputPipe
         taskInput = inputPipe.fileHandleForWriting
@@ -142,7 +146,7 @@ class MBDataModel : NSObject {
             for notes : [MBNote] in allNotes {
                 var output : String = String(format:"a%d = [", pass)
                 for note : MBNote in notes {
-                    output.appendContentsOf(makeWaveFunc(note, amplitude: amplitudes[pass-1], effect: note.effect))
+                    output.appendContentsOf(makeWaveFunc(note, amplitude: amplitudes[pass-1]))
                     if (notes.last != note){
                         output.appendContentsOf(",")
                     }
@@ -163,7 +167,7 @@ class MBDataModel : NSObject {
         //[dtfs_wave(F,L,Fs,W),...]
         var output : String = "a = ["
         for note : MBNote in notes {
-            output.appendContentsOf(makeWaveFunc(note, amplitude: amplitude, effect: note.effect))
+            output.appendContentsOf(makeWaveFunc(note, amplitude: amplitude))
             if (notes.last != note){
                 output.appendContentsOf(",")
             }
@@ -173,28 +177,28 @@ class MBDataModel : NSObject {
         issueCommand("b = audioplayer(a,8000); play(b);\n")
     }
     
-    func makeWaveFunc(note : MBNote, amplitude : Float, effect: String) -> String{
+    func makeWaveFunc(note : MBNote, amplitude : Float) -> String{
         if (note.type == "flute"){
-            return makeAdsrWaveFunc(note, amplitude: amplitude, effect: effect)
+            return makeAdsrWaveFunc(note, amplitude: amplitude)
         }
         else{
-            return makeDtfsWaveFunc(note, amplitude: amplitude, effect: effect)
+            return makeDtfsWaveFunc(note, amplitude: amplitude)
         }
     }
     
-    func makeDtfsWaveFunc(note : MBNote, amplitude : Float, effect: String) -> String{
+    func makeDtfsWaveFunc(note : MBNote, amplitude : Float) -> String{
         //dtfs_wave(F,L,Fs,W)
         if(note.effect != "No Effects") {
-            return String(format: "\(effect)(dtfs_wave(%@,%f,%d,'%@',%f), 8000)", makeNoteFreqFunc(note),note.secondDuration(),8000,note.type,amplitude)
+            return String(format: "\(note.effect)(dtfs_wave(%@,%f,%d,'%@',%f), 8000)", makeNoteFreqFunc(note),note.secondDuration(),8000,note.type,amplitude)
         } else {
             return String(format: "dtfs_wave(%@,%f,%d,'%@',%f)", makeNoteFreqFunc(note),note.secondDuration(),8000,note.type,amplitude)
         }
     }
     
-    func makeAdsrWaveFunc(note : MBNote, amplitude : Float, effect: String) -> String{
+    func makeAdsrWaveFunc(note : MBNote, amplitude : Float) -> String{
         //adsr_wave(F,L,Fs)
         if(note.effect != "No Effects") {
-            return String(format: "\(effect)(adsr_wave(%@,%f,%d,%f), 8000)", makeNoteFreqFunc(note),note.secondDuration(),8000,amplitude)
+            return String(format: "\(note.effect)(adsr_wave(%@,%f,%d,%f), 8000)", makeNoteFreqFunc(note),note.secondDuration(),8000,amplitude)
         } else {
             return String(format: "adsr_wave(%@,%f,%d,%f)", makeNoteFreqFunc(note),note.secondDuration(),8000,amplitude)
         }
