@@ -887,7 +887,7 @@
                                     <constraint firstAttribute="height" constant="151" id="7e8-zf-MHN"/>
                                 </constraints>
                                 <animations/>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.00062500000000000066" horizontal="YES" id="04D-cs-Ury">
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.00062499999999999925" horizontal="YES" id="04D-cs-Ury">
                                     <rect key="frame" x="0.0" y="135" width="800" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
@@ -1130,15 +1130,17 @@
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gTh-BY-AaR">
                                 <rect key="frame" x="343" y="217" width="101" height="26"/>
                                 <animations/>
-                                <popUpButtonCell key="cell" type="push" title="vibrato" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="pUP-WR-Mie" id="A4k-i7-7bP">
+                                <popUpButtonCell key="cell" type="push" title="No Effects" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Oof-q0-gS4" id="A4k-i7-7bP">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="Xqy-Rw-fiq">
                                         <items>
-                                            <menuItem title="No Effects" id="Oof-q0-gS4"/>
+                                            <menuItem title="No Effects" state="on" id="Oof-q0-gS4"/>
                                             <menuItem title="flanger" id="uiB-Lk-nSf"/>
                                             <menuItem title="wah_wah" id="8P7-JV-2xs"/>
-                                            <menuItem title="vibrato" state="on" id="pUP-WR-Mie"/>
+                                            <menuItem title="vibrato" id="pUP-WR-Mie"/>
+                                            <menuItem title="overdrive" id="eqh-4W-xjx" userLabel="overdrive"/>
+                                            <menuItem title="fuzz" id="n8z-K6-2uE" userLabel="overdrive"/>
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
