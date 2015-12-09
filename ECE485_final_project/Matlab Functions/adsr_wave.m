@@ -1,8 +1,8 @@
 %samples from https://www.mathworks.com/matlabcentral/newsreader/view_thread/240825
 
-function [outF] = adsr_wave(F,L,Fs)
+function [outF] = adsr_wave(F,L,Fs,A)
 
-y = dtfs_wave(F,L,Fs,'triangle');
+y = dtfs_wave(F,L,Fs,'triangle',A);
 
 %modify the signal with attack, decay, sustain, release
 A = linspace(0.0, 0.6, (length(y)*0.20));

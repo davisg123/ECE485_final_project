@@ -19,6 +19,7 @@
                 <outlet property="splitView" destination="hPy-rO-Ufv" id="NpV-F5-q6A"/>
                 <outlet property="trackNumLabel" destination="Dnm-zS-Wfg" id="EKY-kD-JLz"/>
                 <outlet property="view" destination="c22-O7-iKe" id="wRx-QH-Vow"/>
+                <outlet property="volume" destination="eXj-0O-H5p" id="8MF-hT-I29"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>

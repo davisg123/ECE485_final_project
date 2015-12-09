@@ -20,6 +20,7 @@ class MBTrackView: NSView, NSSplitViewDelegate, MBTrackHeaderViewClickDelegate {
     @IBOutlet var view : NSView?
     @IBOutlet var splitView : NSSplitView?
     @IBOutlet var headerView : MBTrackHeaderView?
+    @IBOutlet var volume : NSTextField?
     var borderColor : NSColor?
     var selectedBorderColor : NSColor?
     var selected : Bool!
@@ -121,7 +122,11 @@ class MBTrackView: NSView, NSSplitViewDelegate, MBTrackHeaderViewClickDelegate {
     }
     
     func playNotes(){
-        MBDataModel.sharedInstance.playNoteArray(noteArray())
+        MBDataModel.sharedInstance.playNoteArray(noteArray(),amplitude: adjustedVolume())
+    }
+    
+    func adjustedVolume() -> Float{
+        return pow(Float(volume!.stringValue)!,2.0)/10000
     }
     
     //MARK: split view delegate

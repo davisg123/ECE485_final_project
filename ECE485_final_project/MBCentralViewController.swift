@@ -55,11 +55,13 @@ class MBCentralViewController: NSViewController, MatlabEventDelegate, NSSplitVie
     //MARK: playing
     @IBAction func playAllTracks(sender: NSButton) {
         var allNotes : [[MBNote]] = []
+        var allAmps : [Float] = []
         for trackView in splitTrackView!.subviews{
             let trackView = trackView as! MBTrackView
             allNotes.append(trackView.noteArray())
+            allAmps.append(trackView.adjustedVolume())
         }
-        MBDataModel.sharedInstance.playNoteMultiTrackArray(allNotes)
+        MBDataModel.sharedInstance.playNoteMultiTrackArray(allNotes, amplitudes: allAmps)
     }
     
     //MARK: saving
