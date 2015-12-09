@@ -39,6 +39,10 @@ end
 majorMatch = ceil(match/12);
 innerMajorMatch = rem(match,12);
 
+if innerMajorMatch == 0
+    innerMajorMatch = 12;
+end
+
 finalMajor = allMajors(majorMatch,:);
 
 y = finalMajor(innerMajorMatch);
