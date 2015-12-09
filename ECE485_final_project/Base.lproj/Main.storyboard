@@ -807,7 +807,7 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <segue destination="Fjy-Vq-9C8" kind="popover" popoverAnchorView="4lu-bs-tNJ" popoverBehavior="t" preferredEdge="maxY" id="KHk-mY-QHx"/>
+                                            <segue destination="Fjy-Vq-9C8" kind="modal" id="KHk-mY-QHx"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -874,7 +874,7 @@
                                     <animations/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Bn5-9h-ZyQ">
-                                    <rect key="frame" x="784" y="0.0" width="16" height="151"/>
+                                    <rect key="frame" x="785" y="0.0" width="15" height="151"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
