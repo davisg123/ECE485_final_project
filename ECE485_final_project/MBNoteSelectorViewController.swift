@@ -12,7 +12,7 @@ import Cocoa
     func didSelectNote(note:MBNote)
 }
 
-class MBNoteSelectorViewController: NSViewController,MBPianoKeyMouseDelegate {
+class MBNoteSelectorViewController: NSViewController,MBPianoKeyMouseDelegate, MBBlackPianoKeyMouseDelegate {
     
     @IBOutlet var delegate : MBNoteSelectorDelegate?
     
@@ -34,6 +34,14 @@ class MBNoteSelectorViewController: NSViewController,MBPianoKeyMouseDelegate {
     }
     
     func mouseClickedKey(sender:MBPianoKey) {
+        let octaveChar = octaveSelector.titleOfSelectedItem?.characters.last
+        let note = MBNote(noteLetter: sender.note!, octave: String(octaveChar!), type: typeSelector.titleOfSelectedItem!.lowercaseString)
+        NSUserDefaults.standardUserDefaults().setValue(octaveSelector.indexOfSelectedItem, forKey: "octave")
+        NSUserDefaults.standardUserDefaults().setValue(typeSelector.indexOfSelectedItem, forKey: "type")
+        delegate?.didSelectNote(note)
+    }
+    
+    func mouseClickedBlackKey(sender: MBBlackPianoKey) {
         let octaveChar = octaveSelector.titleOfSelectedItem?.characters.last
         let note = MBNote(noteLetter: sender.note!, octave: String(octaveChar!), type: typeSelector.titleOfSelectedItem!.lowercaseString)
         NSUserDefaults.standardUserDefaults().setValue(octaveSelector.indexOfSelectedItem, forKey: "octave")

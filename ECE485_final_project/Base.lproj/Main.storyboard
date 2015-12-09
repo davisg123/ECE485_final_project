@@ -825,7 +825,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="800" height="151"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <view translatesAutoresizingMaskIntoConstraints="NO" id="HCJ-N7-pLt">
+                                        <view misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HCJ-N7-pLt">
                                             <rect key="frame" x="0.0" y="0.0" width="4000" height="151"/>
                                             <subviews>
                                                 <splitView arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-VN-d0a">
@@ -868,7 +868,7 @@
                                     <constraint firstAttribute="height" constant="151" id="7e8-zf-MHN"/>
                                 </constraints>
                                 <animations/>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="04D-cs-Ury">
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.00015624999999999271" horizontal="YES" id="04D-cs-Ury">
                                     <rect key="frame" x="0.0" y="135" width="800" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
@@ -928,10 +928,10 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jvM-ea-9WO" customClass="MBColorableView" customModule="ECE485_final_project" customModuleProvider="target">
-                                <rect key="frame" x="126" y="56" width="199" height="144"/>
+                                <rect key="frame" x="119" y="56" width="215" height="144"/>
                                 <subviews>
                                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s84-gZ-Cv0" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
-                                        <rect key="frame" x="3" y="4" width="25" height="146"/>
+                                        <rect key="frame" x="10" y="4" width="25" height="146"/>
                                         <animations/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="note" value="A"/>
@@ -941,7 +941,7 @@
                                         </connections>
                                     </customView>
                                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fRr-tE-DRR" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
-                                        <rect key="frame" x="31" y="4" width="25" height="146"/>
+                                        <rect key="frame" x="38" y="4" width="25" height="146"/>
                                         <animations/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="note" value="B"/>
@@ -951,7 +951,7 @@
                                         </connections>
                                     </customView>
                                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="90D-bV-LQc" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
-                                        <rect key="frame" x="59" y="4" width="25" height="146"/>
+                                        <rect key="frame" x="66" y="4" width="25" height="146"/>
                                         <animations/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="note" value="C"/>
@@ -961,7 +961,7 @@
                                         </connections>
                                     </customView>
                                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TZ5-wt-0uf" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
-                                        <rect key="frame" x="87" y="4" width="25" height="146"/>
+                                        <rect key="frame" x="94" y="4" width="25" height="146"/>
                                         <animations/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="note" value="D"/>
@@ -971,7 +971,7 @@
                                         </connections>
                                     </customView>
                                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Trp-Gy-2N3" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
-                                        <rect key="frame" x="115" y="4" width="25" height="146"/>
+                                        <rect key="frame" x="122" y="4" width="25" height="146"/>
                                         <animations/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="note" value="E"/>
@@ -981,7 +981,7 @@
                                         </connections>
                                     </customView>
                                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ate-gt-7Tu" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
-                                        <rect key="frame" x="143" y="4" width="25" height="146"/>
+                                        <rect key="frame" x="150" y="4" width="25" height="146"/>
                                         <animations/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="note" value="F"/>
@@ -991,7 +991,7 @@
                                         </connections>
                                     </customView>
                                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w2H-M7-TA5" customClass="MBPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
-                                        <rect key="frame" x="171" y="4" width="25" height="146"/>
+                                        <rect key="frame" x="178" y="4" width="25" height="146"/>
                                         <animations/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="note" value="G"/>
@@ -1000,11 +1000,95 @@
                                             <outlet property="delegate" destination="Fjy-Vq-9C8" id="Qee-1f-cDM"/>
                                         </connections>
                                     </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OCW-de-EJn" customClass="MBBlackPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
+                                        <rect key="frame" x="27" y="53" width="20" height="91"/>
+                                        <animations/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="Bb"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="secondNote" value="A#"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="Fjy-Vq-9C8" id="RiR-4t-Chl"/>
+                                        </connections>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ua-D0-6il" customClass="MBBlackPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
+                                        <rect key="frame" x="111" y="53" width="20" height="91"/>
+                                        <animations/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="secondNote" value="D#"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="Eb"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="Fjy-Vq-9C8" id="bHW-Kg-I4q"/>
+                                        </connections>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9VS-im-MdW" customClass="MBBlackPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
+                                        <rect key="frame" x="167" y="53" width="20" height="91"/>
+                                        <animations/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="secondNote" value="F#"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="Gb"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="Fjy-Vq-9C8" id="1hl-hC-Fei"/>
+                                        </connections>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mIH-gS-jfE" customClass="MBBlackPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
+                                        <rect key="frame" x="195" y="53" width="20" height="91"/>
+                                        <animations/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="Ab"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="secondNote" value="G#"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="Fjy-Vq-9C8" id="Zgm-sE-6XH"/>
+                                        </connections>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rzz-6o-DVX" customClass="MBBlackPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
+                                        <rect key="frame" x="83" y="53" width="20" height="91"/>
+                                        <animations/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="secondNote" value="C#"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="Db"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="Fjy-Vq-9C8" id="GRF-Gc-NzD"/>
+                                        </connections>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wC6-RJ-PYB" customClass="MBBlackPianoKey" customModule="ECE485_final_project" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="53" width="20" height="91"/>
+                                        <animations/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="Ab"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="secondNote" value="G#"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="Fjy-Vq-9C8" id="P0I-d3-GbQ"/>
+                                        </connections>
+                                    </customView>
                                 </subviews>
                                 <animations/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" white="0.34089439655172415" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </customView>
