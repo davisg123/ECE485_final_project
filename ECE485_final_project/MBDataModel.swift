@@ -133,23 +133,28 @@ class MBDataModel : NSObject {
     //MARK: playing
     
     func playNoteMultiTrackArray(allNotes : [[MBNote]]){
-        //only supports two right now 🙁
-        var pass = 1
-        for notes : [MBNote] in allNotes {
-            var output : String = String(format:"a%d = [", pass)
-            for note : MBNote in notes {
-                output.appendContentsOf(makeWaveFunc(note))
-                if (notes.last != note){
-                    output.appendContentsOf(",")
-                }
-            }
-            output.appendContentsOf("];\n")
-            issueCommand(output)
-            pass++
+        if (allNotes.count == 1){
+            playNoteArray(allNotes.first!)
         }
-        //here lies the issue 🙁
-        issueCommand("c=add_mismatch(a1,a2);\n")
-        issueCommand("soundsc(c,8000);\n")
+        else{
+            //only supports two right now 🙁
+            var pass = 1
+            for notes : [MBNote] in allNotes {
+                var output : String = String(format:"a%d = [", pass)
+                for note : MBNote in notes {
+                    output.appendContentsOf(makeWaveFunc(note))
+                    if (notes.last != note){
+                        output.appendContentsOf(",")
+                    }
+                }
+                output.appendContentsOf("];\n")
+                issueCommand(output)
+                pass++
+            }
+            //here lies the issue 🙁
+            issueCommand("c=add_mismatch(a1,a2);\n")
+            issueCommand("soundsc(c,8000);\n")
+        }
     }
     
     func playNoteArray(notes : [MBNote]){

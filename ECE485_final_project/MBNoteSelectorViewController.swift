@@ -39,7 +39,6 @@ class MBNoteSelectorViewController: NSViewController,MBPianoKeyMouseDelegate {
         NSUserDefaults.standardUserDefaults().setValue(octaveSelector.indexOfSelectedItem, forKey: "octave")
         NSUserDefaults.standardUserDefaults().setValue(typeSelector.indexOfSelectedItem, forKey: "type")
         delegate?.didSelectNote(note)
-        self.dismissViewController(self)
     }
     
 }
