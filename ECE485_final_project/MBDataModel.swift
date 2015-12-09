@@ -23,7 +23,7 @@ class MBDataModel : NSObject {
     var matlabLoadDelegate:MatlabLoadDelegate?
     
     //TODO: search for matlab installation instead of static location
-    var MATLAB_PATH = "/Applications/MATLAB_R2015b.app/bin/matlab";
+    var MATLAB_PATH = "/Applications/MATLAB_R2015a.app/bin/matlab";
     let MATLAB_PARAMS = "-nodesktop";
     let READY_PROMPT = ">> "
     let MATLAB_FUNCTION_FOLDER = "Matlab Functions"
@@ -153,8 +153,10 @@ class MBDataModel : NSObject {
             }
             //here lies the issue 🙁
             issueCommand("c=add_mismatch(a1,a2);\n")
-            issueCommand("soundsc(c,8000);\n")
+            issueCommand("b = audioplayer(c,8000); play(b);\n")
         }
+
+
     }
     
     func playNoteArray(notes : [MBNote]){
@@ -168,7 +170,7 @@ class MBDataModel : NSObject {
         }
         output.appendContentsOf("];\n")
         issueCommand(output)
-        issueCommand("soundsc(a,8000);\n")
+        issueCommand("b = audioplayer(a,8000); play(b);\n")
     }
     
     func makeWaveFunc(note : MBNote) -> String{
